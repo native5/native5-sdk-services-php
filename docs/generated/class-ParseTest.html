@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class ParseTest | Native5 Client SDK</title>
+
+	<script type="text/javascript" src="resources/combined.js?554516056"></script>
+	<script type="text/javascript" src="elementlist.js?1017732660"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Native5.html">Native5<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Accounts.html">Accounts</a>
+						</li>
+				<li><a href="namespace-Native5.Connectors.html">Connectors<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Connectors.Database.html">Database</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Native5.Control.html">Control</a>
+						</li>
+				<li><a href="namespace-Native5.Identity.html">Identity</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.html">Messaging<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Messaging.Gateways.html">Gateways</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.Mail.html">Mail</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.SMS.html">SMS</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.Voice.html">Voice</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Native5.Route.html">Route</a>
+						</li>
+				<li><a href="namespace-Native5.Scheduler.html">Scheduler</a>
+						</li>
+				<li><a href="namespace-Native5.Security.html">Security</a>
+						</li>
+				<li><a href="namespace-Native5.Sessions.html">Sessions</a>
+						</li>
+				<li><a href="namespace-Native5.UI.html">UI</a>
+						</li>
+				<li><a href="namespace-Native5.Users.html">Users</a>
+						</li>
+				<li><a href="namespace-Native5.Util.html">Util</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-AbstractConnector.html">AbstractConnector</a></li>
+				<li><a href="class-Article.html">Article</a></li>
+				<li><a href="class-ArticleImage.html">ArticleImage</a></li>
+				<li><a href="class-BaseTemplate.html">BaseTemplate</a></li>
+				<li><a href="class-DumpTest.html">DumpTest</a></li>
+				<li><a href="class-IndentTest.html">IndentTest</a></li>
+				<li><a href="class-LDAPIdentityManager.html">LDAPIdentityManager</a></li>
+				<li><a href="class-Log.html">Log</a></li>
+				<li><a href="class-Log_composite.html">Log_composite</a></li>
+				<li><a href="class-Log_console.html">Log_console</a></li>
+				<li><a href="class-Log_daemon.html">Log_daemon</a></li>
+				<li><a href="class-Log_display.html">Log_display</a></li>
+				<li><a href="class-Log_error_log.html">Log_error_log</a></li>
+				<li><a href="class-Log_file.html">Log_file</a></li>
+				<li><a href="class-Log_firebug.html">Log_firebug</a></li>
+				<li><a href="class-Log_mail.html">Log_mail</a></li>
+				<li><a href="class-Log_mcal.html">Log_mcal</a></li>
+				<li><a href="class-Log_mdb2.html">Log_mdb2</a></li>
+				<li><a href="class-Log_null.html">Log_null</a></li>
+				<li><a href="class-Log_observer.html">Log_observer</a></li>
+				<li><a href="class-Log_sql.html">Log_sql</a></li>
+				<li><a href="class-Log_sqlite.html">Log_sqlite</a></li>
+				<li><a href="class-Log_syslog.html">Log_syslog</a></li>
+				<li><a href="class-Log_win.html">Log_win</a></li>
+				<li><a href="class-Logger.html">Logger</a></li>
+				<li class="active"><a href="class-ParseTest.html">ParseTest</a></li>
+				<li><a href="class-Reader.html">Reader</a></li>
+				<li><a href="class-RequestChecker.html">RequestChecker</a></li>
+				<li><a href="class-RoundTripTest.html">RoundTripTest</a></li>
+				<li><a href="class-SimplePie.html">SimplePie</a></li>
+				<li><a href="class-SimplePie_Author.html">SimplePie_Author</a></li>
+				<li><a href="class-SimplePie_Cache.html">SimplePie_Cache</a></li>
+				<li><a href="class-SimplePie_Cache_DB.html">SimplePie_Cache_DB</a></li>
+				<li><a href="class-SimplePie_Cache_File.html">SimplePie_Cache_File</a></li>
+				<li><a href="class-SimplePie_Cache_Memcache.html">SimplePie_Cache_Memcache</a></li>
+				<li><a href="class-SimplePie_Cache_MySQL.html">SimplePie_Cache_MySQL</a></li>
+				<li><a href="class-SimplePie_Caption.html">SimplePie_Caption</a></li>
+				<li><a href="class-SimplePie_Category.html">SimplePie_Category</a></li>
+				<li><a href="class-SimplePie_Content_Type_Sniffer.html">SimplePie_Content_Type_Sniffer</a></li>
+				<li><a href="class-SimplePie_Copyright.html">SimplePie_Copyright</a></li>
+				<li><a href="class-SimplePie_Core.html">SimplePie_Core</a></li>
+				<li><a href="class-SimplePie_Credit.html">SimplePie_Credit</a></li>
+				<li><a href="class-SimplePie_Enclosure.html">SimplePie_Enclosure</a></li>
+				<li><a href="class-SimplePie_File.html">SimplePie_File</a></li>
+				<li><a href="class-SimplePie_gzdecode.html">SimplePie_gzdecode</a></li>
+				<li><a href="class-SimplePie_HTTP_Parser.html">SimplePie_HTTP_Parser</a></li>
+				<li><a href="class-SimplePie_IRI.html">SimplePie_IRI</a></li>
+				<li><a href="class-SimplePie_Item.html">SimplePie_Item</a></li>
+				<li><a href="class-SimplePie_Locator.html">SimplePie_Locator</a></li>
+				<li><a href="class-SimplePie_Misc.html">SimplePie_Misc</a></li>
+				<li><a href="class-SimplePie_Net_IPv6.html">SimplePie_Net_IPv6</a></li>
+				<li><a href="class-SimplePie_Parse_Date.html">SimplePie_Parse_Date</a></li>
+				<li><a href="class-SimplePie_Parser.html">SimplePie_Parser</a></li>
+				<li><a href="class-SimplePie_Rating.html">SimplePie_Rating</a></li>
+				<li><a href="class-SimplePie_Registry.html">SimplePie_Registry</a></li>
+				<li><a href="class-SimplePie_Restriction.html">SimplePie_Restriction</a></li>
+				<li><a href="class-SimplePie_Sanitize.html">SimplePie_Sanitize</a></li>
+				<li><a href="class-SimplePie_Source.html">SimplePie_Source</a></li>
+				<li><a href="class-SimplePie_XML_Declaration_Parser.html">SimplePie_XML_Declaration_Parser</a></li>
+				<li><a href="class-Spyc.html">Spyc</a></li>
+				<li><a href="class-UA.html">UA</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-iSecure.html">iSecure</a></li>
+				<li><a href="class-SimplePie_Cache_Base.html">SimplePie_Cache_Base</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-json_decode.html">json_decode</a></li>
+				<li><a href="function-json_encode.html">json_encode</a></li>
+				<li><a href="function-php5to4.html">php5to4</a></li>
+				<li><a href="function-roundTrip.html">roundTrip</a></li>
+				<li><a href="function-spyc_load.html">spyc_load</a></li>
+				<li><a href="function-spyc_load_file.html">spyc_load_file</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ParseTest</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+PHPUnit_Framework_TestCase
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>ParseTest</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+		<b>Located at</b> <a href="source-class-ParseTest.html#6-322" title="Go to source code">Native5/Route/lib/spyc-0.5/tests/ParseTest.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setUp" id="_setUp">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUp">#</a>
+		<code><a href="source-class-ParseTest.html#10-12" title="Go to source code">setUp</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMergeHashKeys" id="_testMergeHashKeys">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMergeHashKeys">#</a>
+		<code><a href="source-class-ParseTest.html#14-21" title="Go to source code">testMergeHashKeys</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testDeathMasks" id="_testDeathMasks">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testDeathMasks">#</a>
+		<code><a href="source-class-ParseTest.html#23-27" title="Go to source code">testDeathMasks</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testDevDb" id="_testDevDb">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testDevDb">#</a>
+		<code><a href="source-class-ParseTest.html#29-33" title="Go to source code">testDevDb</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testNumericKey" id="_testNumericKey">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testNumericKey">#</a>
+		<code><a href="source-class-ParseTest.html#35-37" title="Go to source code">testNumericKey</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsString" id="_testMappingsString">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsString">#</a>
+		<code><a href="source-class-ParseTest.html#39-41" title="Go to source code">testMappingsString</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsInt" id="_testMappingsInt">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsInt">#</a>
+		<code><a href="source-class-ParseTest.html#43-45" title="Go to source code">testMappingsInt</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsBooleanTrue" id="_testMappingsBooleanTrue">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsBooleanTrue">#</a>
+		<code><a href="source-class-ParseTest.html#47-49" title="Go to source code">testMappingsBooleanTrue</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsBooleanFalse" id="_testMappingsBooleanFalse">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsBooleanFalse">#</a>
+		<code><a href="source-class-ParseTest.html#51-53" title="Go to source code">testMappingsBooleanFalse</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsZero" id="_testMappingsZero">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsZero">#</a>
+		<code><a href="source-class-ParseTest.html#55-57" title="Go to source code">testMappingsZero</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsNull" id="_testMappingsNull">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsNull">#</a>
+		<code><a href="source-class-ParseTest.html#59-61" title="Go to source code">testMappingsNull</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsNotNull" id="_testMappingsNotNull">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsNotNull">#</a>
+		<code><a href="source-class-ParseTest.html#63-65" title="Go to source code">testMappingsNotNull</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsFloat" id="_testMappingsFloat">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsFloat">#</a>
+		<code><a href="source-class-ParseTest.html#67-69" title="Go to source code">testMappingsFloat</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsNegative" id="_testMappingsNegative">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsNegative">#</a>
+		<code><a href="source-class-ParseTest.html#71-73" title="Go to source code">testMappingsNegative</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappingsSmallFloat" id="_testMappingsSmallFloat">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappingsSmallFloat">#</a>
+		<code><a href="source-class-ParseTest.html#75-77" title="Go to source code">testMappingsSmallFloat</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testNewline" id="_testNewline">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testNewline">#</a>
+		<code><a href="source-class-ParseTest.html#79-81" title="Go to source code">testNewline</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSeq0" id="_testSeq0">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSeq0">#</a>
+		<code><a href="source-class-ParseTest.html#84-86" title="Go to source code">testSeq0</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSeq1" id="_testSeq1">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSeq1">#</a>
+		<code><a href="source-class-ParseTest.html#88-90" title="Go to source code">testSeq1</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSeq2" id="_testSeq2">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSeq2">#</a>
+		<code><a href="source-class-ParseTest.html#92-94" title="Go to source code">testSeq2</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSeq3" id="_testSeq3">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSeq3">#</a>
+		<code><a href="source-class-ParseTest.html#96-99" title="Go to source code">testSeq3</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSeqMap" id="_testSeqMap">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSeqMap">#</a>
+		<code><a href="source-class-ParseTest.html#101-104" title="Go to source code">testSeqMap</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMappedSequence" id="_testMappedSequence">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMappedSequence">#</a>
+		<code><a href="source-class-ParseTest.html#106-108" title="Go to source code">testMappedSequence</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testAnotherSequence" id="_testAnotherSequence">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testAnotherSequence">#</a>
+		<code><a href="source-class-ParseTest.html#110-113" title="Go to source code">testAnotherSequence</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testFoldedBlock" id="_testFoldedBlock">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testFoldedBlock">#</a>
+		<code><a href="source-class-ParseTest.html#115-117" title="Go to source code">testFoldedBlock</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testLiteralAsMapped" id="_testLiteralAsMapped">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testLiteralAsMapped">#</a>
+		<code><a href="source-class-ParseTest.html#119-121" title="Go to source code">testLiteralAsMapped</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testCrazy" id="_testCrazy">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testCrazy">#</a>
+		<code><a href="source-class-ParseTest.html#123-128" title="Go to source code">testCrazy</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testColons" id="_testColons">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testColons">#</a>
+		<code><a href="source-class-ParseTest.html#130-132" title="Go to source code">testColons</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testInline" id="_testInline">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testInline">#</a>
+		<code><a href="source-class-ParseTest.html#134-136" title="Go to source code">testInline</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testNestedInline" id="_testNestedInline">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testNestedInline">#</a>
+		<code><a href="source-class-ParseTest.html#138-140" title="Go to source code">testNestedInline</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testNestedNestedInline" id="_testNestedNestedInline">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testNestedNestedInline">#</a>
+		<code><a href="source-class-ParseTest.html#142-145" title="Go to source code">testNestedNestedInline</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testInlineMappings" id="_testInlineMappings">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testInlineMappings">#</a>
+		<code><a href="source-class-ParseTest.html#147-149" title="Go to source code">testInlineMappings</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testNestedInlineMappings" id="_testNestedInlineMappings">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testNestedInlineMappings">#</a>
+		<code><a href="source-class-ParseTest.html#151-154" title="Go to source code">testNestedInlineMappings</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testReferences" id="_testReferences">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testReferences">#</a>
+		<code><a href="source-class-ParseTest.html#156-158" title="Go to source code">testReferences</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testReferences2" id="_testReferences2">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testReferences2">#</a>
+		<code><a href="source-class-ParseTest.html#160-162" title="Go to source code">testReferences2</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testReferences3" id="_testReferences3">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testReferences3">#</a>
+		<code><a href="source-class-ParseTest.html#164-169" title="Go to source code">testReferences3</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEscapedQuotes" id="_testEscapedQuotes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEscapedQuotes">#</a>
+		<code><a href="source-class-ParseTest.html#171-173" title="Go to source code">testEscapedQuotes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEscapedQuotes_2" id="_testEscapedQuotes_2">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEscapedQuotes_2">#</a>
+		<code><a href="source-class-ParseTest.html#175-177" title="Go to source code">testEscapedQuotes_2</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEscapedQuotes_3" id="_testEscapedQuotes_3">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEscapedQuotes_3">#</a>
+		<code><a href="source-class-ParseTest.html#179-181" title="Go to source code">testEscapedQuotes_3</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testQuotes" id="_testQuotes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testQuotes">#</a>
+		<code><a href="source-class-ParseTest.html#183-185" title="Go to source code">testQuotes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testQuoteSequence" id="_testQuoteSequence">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testQuoteSequence">#</a>
+		<code><a href="source-class-ParseTest.html#187-189" title="Go to source code">testQuoteSequence</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testShortSequence" id="_testShortSequence">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testShortSequence">#</a>
+		<code><a href="source-class-ParseTest.html#191-193" title="Go to source code">testShortSequence</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testHash_1" id="_testHash_1">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testHash_1">#</a>
+		<code><a href="source-class-ParseTest.html#195-197" title="Go to source code">testHash_1</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testHash_2" id="_testHash_2">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testHash_2">#</a>
+		<code><a href="source-class-ParseTest.html#199-201" title="Go to source code">testHash_2</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testHash_3" id="_testHash_3">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testHash_3">#</a>
+		<code><a href="source-class-ParseTest.html#203-205" title="Go to source code">testHash_3</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEndloop" id="_testEndloop">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEndloop">#</a>
+		<code><a href="source-class-ParseTest.html#207-209" title="Go to source code">testEndloop</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testReallyLargeNumber" id="_testReallyLargeNumber">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testReallyLargeNumber">#</a>
+		<code><a href="source-class-ParseTest.html#211-213" title="Go to source code">testReallyLargeNumber</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testFloatWithZeros" id="_testFloatWithZeros">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testFloatWithZeros">#</a>
+		<code><a href="source-class-ParseTest.html#215-217" title="Go to source code">testFloatWithZeros</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testFloatWithQuotes" id="_testFloatWithQuotes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testFloatWithQuotes">#</a>
+		<code><a href="source-class-ParseTest.html#219-221" title="Go to source code">testFloatWithQuotes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testFloatInverse" id="_testFloatInverse">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testFloatInverse">#</a>
+		<code><a href="source-class-ParseTest.html#223-225" title="Go to source code">testFloatInverse</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testIntArray" id="_testIntArray">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testIntArray">#</a>
+		<code><a href="source-class-ParseTest.html#227-229" title="Go to source code">testIntArray</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testArrayOnSeveralLines" id="_testArrayOnSeveralLines">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testArrayOnSeveralLines">#</a>
+		<code><a href="source-class-ParseTest.html#231-233" title="Go to source code">testArrayOnSeveralLines</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testmoreLessKey" id="_testmoreLessKey">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testmoreLessKey">#</a>
+		<code><a href="source-class-ParseTest.html#235-237" title="Go to source code">testmoreLessKey</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testArrayOfZero" id="_testArrayOfZero">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testArrayOfZero">#</a>
+		<code><a href="source-class-ParseTest.html#239-241" title="Go to source code">testArrayOfZero</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSophisticatedArrayOfZero" id="_testSophisticatedArrayOfZero">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSophisticatedArrayOfZero">#</a>
+		<code><a href="source-class-ParseTest.html#243-245" title="Go to source code">testSophisticatedArrayOfZero</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSwitches" id="_testSwitches">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSwitches">#</a>
+		<code><a href="source-class-ParseTest.html#247-249" title="Go to source code">testSwitches</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEmptySequence" id="_testEmptySequence">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEmptySequence">#</a>
+		<code><a href="source-class-ParseTest.html#251-253" title="Go to source code">testEmptySequence</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEmptyHash" id="_testEmptyHash">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEmptyHash">#</a>
+		<code><a href="source-class-ParseTest.html#255-257" title="Go to source code">testEmptyHash</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testEmptykey" id="_testEmptykey">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testEmptykey">#</a>
+		<code><a href="source-class-ParseTest.html#259-261" title="Go to source code">testEmptykey</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testMultilines" id="_testMultilines">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testMultilines">#</a>
+		<code><a href="source-class-ParseTest.html#263-265" title="Go to source code">testMultilines</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testManyNewlines" id="_testManyNewlines">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testManyNewlines">#</a>
+		<code><a href="source-class-ParseTest.html#267-284" title="Go to source code">testManyNewlines</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testWerte" id="_testWerte">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testWerte">#</a>
+		<code><a href="source-class-ParseTest.html#286-288" title="Go to source code">testWerte</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testColonsInKeys" id="_testColonsInKeys">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testColonsInKeys">#</a>
+		<code><a href="source-class-ParseTest.html#298-300" title="Go to source code">testColonsInKeys</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testColonsInKeys2" id="_testColonsInKeys2">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testColonsInKeys2">#</a>
+		<code><a href="source-class-ParseTest.html#302-304" title="Go to source code">testColonsInKeys2</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testSpecialCharacters" id="_testSpecialCharacters">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testSpecialCharacters">#</a>
+		<code><a href="source-class-ParseTest.html#306-308" title="Go to source code">testSpecialCharacters</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testAngleQuotes" id="_testAngleQuotes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testAngleQuotes">#</a>
+		<code><a href="source-class-ParseTest.html#310-314" title="Go to source code">testAngleQuotes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="testFailingColons" id="_testFailingColons">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_testFailingColons">#</a>
+		<code><a href="source-class-ParseTest.html#316-320" title="Go to source code">testFailingColons</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="yaml" id="$yaml">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-ParseTest.html#8" title="Go to source code"><var>$yaml</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$yaml" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Native5 Client SDK API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

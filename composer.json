@@ -1,0 +1,54 @@
+{   
+    "name"            : "native5/native5-sdk-services-php",
+    "description"     : "PHP Services SDK for invoking Native5 Hosted Services.",
+    "version"         : "0.1.0",
+    "keywords"        : ["identity", "jobs", "analytics", "messaging"],
+    "homepage"        : "http://www.native5.com",
+    "license"         : "proprietary",
+    "authors"         : [
+        {
+            "name"    : "Barada Sahu",
+            "email"   : "barry@native5.com"
+        },
+        {
+            "name"    : "Shamik Datta",
+            "email"   : "shamik@native5.com"
+        },
+        {
+            "name"    : "Bikas Vaibhav",
+            "email"   : "bikas@native5.com"
+        }
+    ],
+    "support"        : {
+            "email"   : "support@native5.com"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://test.native5.com/composer"
+        },    
+        { 
+            "type": "pear", 
+            "url": "http://pear.php.net" 
+        }
+    ],
+    "require" : {
+            "twig/twig": "1.*",
+            "aws/aws-sdk-php": "2.*",
+            "monolog/monolog": "1.2.*",
+            "twilio/sdk": "*",
+            "guzzle/guzzle": "*",
+            "phpunit/phpunit": "3.7.*",
+            "pear-pear.php.net/Mail_Mime":"*",
+            "pear-pear.php.net/Mail_Queue":"*",
+            "pear-pear.php.net/MDB2_Driver_mysqli":"*",
+            "native5/native5-sdk-common-php": "0.1.0",
+            "codeguy/upload": "*"
+    },
+    "autoload": {
+            "psr-0": {
+                "Native5": "src/",
+                "Native5\\Tests": "tests/"
+            }
+    }
+}

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SimplePie_XML_Declaration_Parser | Native5 Client SDK</title>
+
+	<script type="text/javascript" src="resources/combined.js?554516056"></script>
+	<script type="text/javascript" src="elementlist.js?1017732660"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-Native5.html">Native5<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Accounts.html">Accounts</a>
+						</li>
+				<li><a href="namespace-Native5.Connectors.html">Connectors<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Connectors.Database.html">Database</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Native5.Control.html">Control</a>
+						</li>
+				<li><a href="namespace-Native5.Identity.html">Identity</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.html">Messaging<span></span></a>
+						<ul>
+				<li><a href="namespace-Native5.Messaging.Gateways.html">Gateways</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.Mail.html">Mail</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.SMS.html">SMS</a>
+						</li>
+				<li><a href="namespace-Native5.Messaging.Voice.html">Voice</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Native5.Route.html">Route</a>
+						</li>
+				<li><a href="namespace-Native5.Scheduler.html">Scheduler</a>
+						</li>
+				<li><a href="namespace-Native5.Security.html">Security</a>
+						</li>
+				<li><a href="namespace-Native5.Sessions.html">Sessions</a>
+						</li>
+				<li><a href="namespace-Native5.UI.html">UI</a>
+						</li>
+				<li><a href="namespace-Native5.Users.html">Users</a>
+						</li>
+				<li><a href="namespace-Native5.Util.html">Util</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-AbstractConnector.html">AbstractConnector</a></li>
+				<li><a href="class-Article.html">Article</a></li>
+				<li><a href="class-ArticleImage.html">ArticleImage</a></li>
+				<li><a href="class-BaseTemplate.html">BaseTemplate</a></li>
+				<li><a href="class-DumpTest.html">DumpTest</a></li>
+				<li><a href="class-IndentTest.html">IndentTest</a></li>
+				<li><a href="class-LDAPIdentityManager.html">LDAPIdentityManager</a></li>
+				<li><a href="class-Log.html">Log</a></li>
+				<li><a href="class-Log_composite.html">Log_composite</a></li>
+				<li><a href="class-Log_console.html">Log_console</a></li>
+				<li><a href="class-Log_daemon.html">Log_daemon</a></li>
+				<li><a href="class-Log_display.html">Log_display</a></li>
+				<li><a href="class-Log_error_log.html">Log_error_log</a></li>
+				<li><a href="class-Log_file.html">Log_file</a></li>
+				<li><a href="class-Log_firebug.html">Log_firebug</a></li>
+				<li><a href="class-Log_mail.html">Log_mail</a></li>
+				<li><a href="class-Log_mcal.html">Log_mcal</a></li>
+				<li><a href="class-Log_mdb2.html">Log_mdb2</a></li>
+				<li><a href="class-Log_null.html">Log_null</a></li>
+				<li><a href="class-Log_observer.html">Log_observer</a></li>
+				<li><a href="class-Log_sql.html">Log_sql</a></li>
+				<li><a href="class-Log_sqlite.html">Log_sqlite</a></li>
+				<li><a href="class-Log_syslog.html">Log_syslog</a></li>
+				<li><a href="class-Log_win.html">Log_win</a></li>
+				<li><a href="class-Logger.html">Logger</a></li>
+				<li><a href="class-ParseTest.html">ParseTest</a></li>
+				<li><a href="class-Reader.html">Reader</a></li>
+				<li><a href="class-RequestChecker.html">RequestChecker</a></li>
+				<li><a href="class-RoundTripTest.html">RoundTripTest</a></li>
+				<li><a href="class-SimplePie.html">SimplePie</a></li>
+				<li><a href="class-SimplePie_Author.html">SimplePie_Author</a></li>
+				<li><a href="class-SimplePie_Cache.html">SimplePie_Cache</a></li>
+				<li><a href="class-SimplePie_Cache_DB.html">SimplePie_Cache_DB</a></li>
+				<li><a href="class-SimplePie_Cache_File.html">SimplePie_Cache_File</a></li>
+				<li><a href="class-SimplePie_Cache_Memcache.html">SimplePie_Cache_Memcache</a></li>
+				<li><a href="class-SimplePie_Cache_MySQL.html">SimplePie_Cache_MySQL</a></li>
+				<li><a href="class-SimplePie_Caption.html">SimplePie_Caption</a></li>
+				<li><a href="class-SimplePie_Category.html">SimplePie_Category</a></li>
+				<li><a href="class-SimplePie_Content_Type_Sniffer.html">SimplePie_Content_Type_Sniffer</a></li>
+				<li><a href="class-SimplePie_Copyright.html">SimplePie_Copyright</a></li>
+				<li><a href="class-SimplePie_Core.html">SimplePie_Core</a></li>
+				<li><a href="class-SimplePie_Credit.html">SimplePie_Credit</a></li>
+				<li><a href="class-SimplePie_Enclosure.html">SimplePie_Enclosure</a></li>
+				<li><a href="class-SimplePie_File.html">SimplePie_File</a></li>
+				<li><a href="class-SimplePie_gzdecode.html">SimplePie_gzdecode</a></li>
+				<li><a href="class-SimplePie_HTTP_Parser.html">SimplePie_HTTP_Parser</a></li>
+				<li><a href="class-SimplePie_IRI.html">SimplePie_IRI</a></li>
+				<li><a href="class-SimplePie_Item.html">SimplePie_Item</a></li>
+				<li><a href="class-SimplePie_Locator.html">SimplePie_Locator</a></li>
+				<li><a href="class-SimplePie_Misc.html">SimplePie_Misc</a></li>
+				<li><a href="class-SimplePie_Net_IPv6.html">SimplePie_Net_IPv6</a></li>
+				<li><a href="class-SimplePie_Parse_Date.html">SimplePie_Parse_Date</a></li>
+				<li><a href="class-SimplePie_Parser.html">SimplePie_Parser</a></li>
+				<li><a href="class-SimplePie_Rating.html">SimplePie_Rating</a></li>
+				<li><a href="class-SimplePie_Registry.html">SimplePie_Registry</a></li>
+				<li><a href="class-SimplePie_Restriction.html">SimplePie_Restriction</a></li>
+				<li><a href="class-SimplePie_Sanitize.html">SimplePie_Sanitize</a></li>
+				<li><a href="class-SimplePie_Source.html">SimplePie_Source</a></li>
+				<li class="active"><a href="class-SimplePie_XML_Declaration_Parser.html">SimplePie_XML_Declaration_Parser</a></li>
+				<li><a href="class-Spyc.html">Spyc</a></li>
+				<li><a href="class-UA.html">UA</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-iSecure.html">iSecure</a></li>
+				<li><a href="class-SimplePie_Cache_Base.html">SimplePie_Cache_Base</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-json_decode.html">json_decode</a></li>
+				<li><a href="function-json_encode.html">json_encode</a></li>
+				<li><a href="function-php5to4.html">php5to4</a></li>
+				<li><a href="function-roundTrip.html">roundTrip</a></li>
+				<li><a href="function-spyc_load.html">spyc_load</a></li>
+				<li><a href="function-spyc_load_file.html">spyc_load_file</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SimplePie_XML_Declaration_Parser</h1>
+
+
+	<div class="description">
+	
+<p>Parses the XML Declaration</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> SimplePie<br />
+
+				<b>Copyright:</b>
+				2004-2012 Ryan Parman, Geoffrey Sneddon, Ryan McCue<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a><br />
+				<b>Author:</b>
+				Ryan Parman<br />
+				<b>Author:</b>
+				Geoffrey Sneddon<br />
+				<b>Author:</b>
+				Ryan McCue<br />
+		<b>Located at</b> <a href="source-class-SimplePie_XML_Declaration_Parser.html#16030-16345" title="Go to source code">Native5/Lib/SimplePie.compiled.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16093-16103" title="Go to source code">__construct</a>( <span>string <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Create an instance of the class with the input data</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create an instance of the class with the input data</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><code>string</code><br>$data Input data</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse" id="_parse">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16105-16130" title="Go to source code">parse</a>( )</code>
+
+		<div class="description short">
+			
+<p>Parse the input data</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Parse the input data</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true on success, false on failure<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has_data" id="_has_data">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has_data">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16132-16141" title="Go to source code">has_data</a>( )</code>
+
+		<div class="description short">
+			
+<p>Check whether there is data beyond the pointer</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check whether there is data beyond the pointer</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>true if there is further data, false if not<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="skip_whitespace" id="_skip_whitespace">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_skip_whitespace">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16143-16153" title="Go to source code">skip_whitespace</a>( )</code>
+
+		<div class="description short">
+			
+<p>Advance past any whitespace</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Advance past any whitespace</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>Number of whitespace characters passed<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_value" id="_get_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_value">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16155-16173" title="Go to source code">get_value</a>( )</code>
+
+		<div class="description short">
+			
+<p>Read value</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Read value</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="before_version_name" id="_before_version_name">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_before_version_name">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16175-16185" title="Go to source code">before_version_name</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="version_name" id="_version_name">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_version_name">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16187-16199" title="Go to source code">version_name</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="version_equals" id="_version_equals">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_version_equals">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16201-16213" title="Go to source code">version_equals</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="version_value" id="_version_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_version_value">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16215-16233" title="Go to source code">version_value</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encoding_name" id="_encoding_name">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encoding_name">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16235-16247" title="Go to source code">encoding_name</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encoding_equals" id="_encoding_equals">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encoding_equals">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16249-16261" title="Go to source code">encoding_equals</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encoding_value" id="_encoding_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encoding_value">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16263-16281" title="Go to source code">encoding_value</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="standalone_name" id="_standalone_name">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_standalone_name">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16283-16295" title="Go to source code">standalone_name</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="standalone_equals" id="_standalone_equals">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_standalone_equals">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16297-16309" title="Go to source code">standalone_equals</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="standalone_value" id="_standalone_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_standalone_value">#</a>
+		<code><a href="source-class-SimplePie_XML_Declaration_Parser.html#16311-16344" title="Go to source code">standalone_value</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="version" id="$version">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16037-16043" title="Go to source code"><var>$version</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'1.0'</span></code></td>
+		<td class="description"><div>
+			<a href="#$version" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>XML Version</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>XML Version</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="encoding" id="$encoding">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16045-16051" title="Go to source code"><var>$encoding</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'UTF-8'</span></code></td>
+		<td class="description"><div>
+			<a href="#$encoding" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Encoding</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Encoding</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="standalone" id="$standalone">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16053-16059" title="Go to source code"><var>$standalone</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$standalone" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Standalone</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Standalone</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="state" id="$state">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16061-16067" title="Go to source code"><var>$state</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">'before_version_name'</span></code></td>
+		<td class="description"><div>
+			<a href="#$state" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Current state of the state machine</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Current state of the state machine</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="data" id="$data">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16069-16075" title="Go to source code"><var>$data</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">''</span></code></td>
+		<td class="description"><div>
+			<a href="#$data" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Input data</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Input data</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="data_length" id="$data_length">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16077-16083" title="Go to source code"><var>$data_length</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">0</span></code></td>
+		<td class="description"><div>
+			<a href="#$data_length" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Input data length (to avoid calling strlen() everytime this is needed)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Input data length (to avoid calling strlen() everytime this is needed)</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="position" id="$position">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SimplePie_XML_Declaration_Parser.html#16085-16091" title="Go to source code"><var>$position</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">0</span></code></td>
+		<td class="description"><div>
+			<a href="#$position" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Current position of the pointer</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Current position of the pointer</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Native5 Client SDK API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
