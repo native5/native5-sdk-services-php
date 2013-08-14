@@ -24,7 +24,7 @@
 namespace Native5\Services\Messaging;
 
 use Native5\Services\Messaging\MessagingException;
-use Native5\Api\ApiClient;
+use Native5\Services\Common\ApiClient;
 use Native5\Services\Messaging\Notifier;
 use Native5\Services\Messaging\Message;
 
