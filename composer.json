@@ -1,7 +1,7 @@
 {   
     "name"            : "native5/native5-sdk-services-php",
     "description"     : "PHP Services SDK for invoking Native5 Hosted Services.",
-    "version"         : "0.2.0",
+    "version"         : "0.1.0",
     "keywords"        : ["identity", "jobs", "analytics", "messaging"],
     "homepage"        : "http://www.native5.com",
     "license"         : "proprietary",
