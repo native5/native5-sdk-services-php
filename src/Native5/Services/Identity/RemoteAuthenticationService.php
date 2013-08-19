@@ -27,6 +27,7 @@ use Native5\Services\Common\Api\ApiClient;
 use Native5\Identity\Authenticator;
 use Native5\Identity\Logout;
 use Native5\Identity\AuthenticationException;
+use Native5\Identity\SimpleAuthInfo;
 
 /**
  * RemoteAuthenticationService
