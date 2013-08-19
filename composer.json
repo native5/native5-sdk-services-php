@@ -31,15 +31,18 @@
             "url": "http://pear.php.net" 
         }
     ],
+    "require-dev" : {
+        "native5/native5-sdk-common-php": "dev-development",
+        "native5/native5-sdk-client-php": "dev-development"
+    
+    },
     "require" : {
             "twig/twig": "1.*",
             "aws/aws-sdk-php": "2.*",
             "monolog/monolog": "1.2.*",
             "twilio/sdk": "*",
             "guzzle/guzzle": "*",
-            "phpunit/phpunit": "3.7.*",
-            "native5/native5-sdk-common-php": "dev-development",
-            "native5/native5-sdk-client-php": "dev-development"
+            "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
             "psr-0": {
