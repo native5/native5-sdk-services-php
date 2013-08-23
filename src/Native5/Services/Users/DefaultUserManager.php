@@ -22,8 +22,7 @@
  */
 
 namespace Native5\Services\Users;
-
-use Native5\Api\ApiClient;
+use Native5\Services\Common\ApiClient;
 
 /**
  * %ClassName% 
