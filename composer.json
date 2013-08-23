@@ -24,7 +24,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://test.native5.com/composer"
+            "url": "http://releases.native5.com/sdk-php/"
         },    
         { 
             "type": "pear", 
