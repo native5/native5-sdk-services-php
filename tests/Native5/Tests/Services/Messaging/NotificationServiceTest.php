@@ -28,14 +28,64 @@
  */
 namespace Native5\Tests\Messaging;
 
-class NotificationServiceTest extends \Native5\Tests\Native5TestCase {
+use Native5\Services\Messaging\NotificationService;
+use Native5\Services\Messaging\Notifier;
+use Native5\Services\Messaging\MailMessage;
+use Native5\Services\Messaging\SMSMessage;
+
+class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
+
+    /**
+     * @var Native5\Services\Messaging\Messaging\NotificationService;
+     */
+    protected $object;
+
+    /**
+     * @var Native5\Core\Log\Logger
+     */
+    protected $_logger;
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        $this->object = NotificationService::instance();
+        $this->_logger = $GLOBALS['logger'];
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+    }
 
     public function testEmail() {
+        $channels = array();
+        $channels[] = Notifier::TYPE_EMAIL;
+        $email = new MailMessage;
 
+        $email->setSubject('Test E-mail : Subject 001');
+        $email->setBody('Testing E-mail Sending works.');
+        $email->setRecipients(array('barry@native5.com'));
+
+        $mailStatus = $this->object->sendNotification($channels, $email);
+        $this->assertNotNull($mailStatus['mail']);
     }
 
     public function testSMS() {
+        $channels = array();
+        $channels[] = Notifier::TYPE_SMS;
+        $sms = new SMSMessage;
 
+        $sms->setBody('Testing SMS Sending works.');
+        $sms->setRecipients(array('+917411755625'));
+
+        $smsStatus = $this->object->sendNotification($channels, $sms);
+        $this->assertNotNull($smsStatus['sms']);
     }
 }
 
