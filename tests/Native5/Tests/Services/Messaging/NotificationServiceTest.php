@@ -63,6 +63,7 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
     {
     }
 
+
     public function testEmail() {
         $channels = array();
         $channels[] = Notifier::TYPE_EMAIL;
@@ -76,6 +77,7 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertNotNull($mailStatus['mail']);
     }
 
+
     public function testSMS() {
         $channels = array();
         $channels[] = Notifier::TYPE_SMS;
@@ -88,4 +90,3 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertNotNull($smsStatus['sms']);
     }
 }
-
