@@ -93,6 +93,21 @@ class IdentityServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Native5\Identity\SimpleAuthInfo', $authInfo);
     }
 
+    /**
+     * testAuthError
+     *
+     * @expectedException  Native5\Identity\AuthenticationException 
+     * 
+     * @access public
+     * @return void
+     */
+    public function testAuthError()
+    {
+        $authService = new RemoteAuthenticationService();
+        $token = new UsernamePasswordToken('barry@native5.com', 'Awq21sdfjqe2');
+        $authInfo = $authService->authenticate($token);
+    }
+
 
     /**
      * testAuthFailure 
