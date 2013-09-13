@@ -59,9 +59,9 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
     {
         $logger  = $GLOBALS['logger'];
         $path    = 'users/authenticate';
-        $request = $this->_remoteServer->get($path, array('username'=>$token->getUser(), 'password'=>$token->getPassword()));
-        //$request->getQuery()->set('username', $token->getUser());
-        //$request->getQuery()->set('password', $token->getPassword());
+        $request = $this->_remoteServer->get($path);
+        $request->getQuery()->set('username', $token->getUser()); 
+        $request->getQuery()->set('password', $token->getPassword()); 
         try {
             $response = $request->send();
             if ($response->getStatusCode() !== 200) {
@@ -69,13 +69,15 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
             }
 
             $rawResponse = $response->json();
-            //$logger->debug(print_r($rawResponse, 1));
 
+            $roles    = isset($rawResponse['roles'])?explode(',',$rawResponse['roles']):array();
             $authInfo = new SimpleAuthInfo();
             $authInfo->addPrincipal($rawResponse['displayName']);
             $authInfo->addPrincipal($rawResponse['email']);
             $authInfo->addPrincipal($rawResponse['account']);
-            return $authInfo;
+
+
+            return array($authInfo, $roles);
         } catch (\Exception $e) {
             throw new AuthenticationException();
         }
