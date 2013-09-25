@@ -87,7 +87,7 @@ class RemoteRulesService extends ApiClient
         $request = $this->_remoteServer->post(
             $path,
             array('Content-Type'=>'application/json'),
-            json_encode($rule)
+            $rule
         );
         try {
             $response = $request->send();
@@ -117,7 +117,7 @@ class RemoteRulesService extends ApiClient
         $request = $this->_remoteServer->put(
             $path,
             array('Content-Type'=>'application/json'),
-            json_encode($rule)
+            $rule
         );
         try {
             $response = $request->send();
@@ -148,7 +148,7 @@ class RemoteRulesService extends ApiClient
         $request = $this->_remoteServer->post(
             $path,
             array('Content-Type'=>'application/json'),
-            json_encode($ruleData)
+            $ruleData
         );
         try {
             $response = $request->send();
