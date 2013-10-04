@@ -57,7 +57,7 @@ class RemoteRulesService extends ApiClient
     public function findByPattern($rulePattern) {
         $logger = $GLOBALS['logger'];
         $path    = 'rules/';
-        $request = $this->_remoteServer->get($path, array('Content-Type'=>'application/json', $rulePattern));
+        $request = $this->_remoteServer->get($path, array(), array('pattern'=>urlencode($rulePattern))); 
         try {
             $response = $request->send();
             if ($response->getStatusCode() !== 200) {
