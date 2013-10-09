@@ -112,7 +112,7 @@ class RemoteRulesService extends ApiClient
      */
     public function updateRule($rule) {
         $logger = $GLOBALS['logger'];
-        $path    = 'rules/'.$rule->getId();
+        $path    = 'rules/update';
         $request = $this->_remoteServer->put(
             $path,
             array('Content-Type'=>'application/json'),
