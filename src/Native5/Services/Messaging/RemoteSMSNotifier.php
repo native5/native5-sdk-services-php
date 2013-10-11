@@ -54,7 +54,7 @@ class RemoteSMSNotifier extends ApiClient implements Notifier
      * @return NotificationStatus
      * @throws MessagingException
      */
-    public function notify(Message $message)
+    public function notify(Message $message, $options=array())
     {
         $logger = $GLOBALS['logger'];
         $logger->debug(
