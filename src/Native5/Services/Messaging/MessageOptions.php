@@ -36,13 +36,13 @@ namespace Native5\Services\Messaging;
  * Created : 27-11-2012
  * Last Modified : Fri Dec 21 09:11:53 2012
  */
-class MailOptions
+class MessageOptions
 {
     const OPT_PRIORITY_HIGH = 'HIGH';
     const OPT_PRIORITY_NORMAL = 'NORMAL';
     const OPT_PRIORITY_LOW = 'LOW';
 
-    const OPT_FORMAT_TEXT = 'TEXT';
-    const OPT_FORMAT_HTML = 'HTML';
+    const OPT_MAIL_FORMAT_TEXT = 'TEXT';
+    const OPT_MAIL_FORMAT_HTML = 'HTML';
 }
 
