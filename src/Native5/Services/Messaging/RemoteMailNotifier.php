@@ -70,10 +70,10 @@ class RemoteMailNotifier extends ApiClient implements Notifier
         $request->setPostField('subject', $message->getSubject());
         $request->setPostField('to', implode(';', $message->getRecipients()));
         $request->setPostField('content', $message->getBody());
-        if (array_key_exists($priority, $options)) {
+        if (array_key_exists('priority', $options)) {
             $request->setPostField('priority', $options['priority']);
         }
-        if (array_key_exists($format, $options)) {
+        if (array_key_exists('format', $options)) {
             $request->setPostField('format', $options['format']);
         }
 
