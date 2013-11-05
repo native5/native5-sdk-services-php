@@ -230,13 +230,8 @@ class DefaultUserManager extends ApiClient implements UserManager
         $request =  $this->_remoteServer->get($path);
         $request->getQuery()->set('email', $email);
         $request->getQuery()->set('token', $token);
-        try {
-            $response = $request->send();
-        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
-            $logger->info($e->getResponse()->getBody('true'), array());
-            return false;
-        }
-        return true;
+        $response = $request->send();
+        return $response->getBody('true');
 
     }//end verifyToken()
 }
