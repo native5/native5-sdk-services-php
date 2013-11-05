@@ -26,7 +26,7 @@ namespace Native5\Services\Users;
 use Native5\Services\Common\ApiClient;
 
 /**
- * %ClassName% 
+ * DefaultUserManager 
  * 
  * @category  Users 
  * @package   Native5\Services\Users
