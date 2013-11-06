@@ -5,15 +5,10 @@
 	<meta name="generator" content="ApiGen 2.8.0" />
 	<meta name="robots" content="noindex" />
 
-	<title>File Native5/Services/Messaging/Notifier.php</title>
+	<title>File Native5/Services/Messaging/MessageOptions.php</title>
 
-<<<<<<< HEAD
-	<script type="text/javascript" src="resources/combined.js?1180343265"></script>
-	<script type="text/javascript" src="elementlist.js?4256207572"></script>
-=======
 	<script type="text/javascript" src="resources/combined.js?3177796058"></script>
 	<script type="text/javascript" src="elementlist.js?1866472076"></script>
->>>>>>> release-0.2.0
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?2446941819" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2979642362" />
 
@@ -34,7 +29,7 @@
 							<a href="namespace-Native5.Services.Messaging.html" title="Summary of Native5\Services\Messaging"><span>Namespace</span></a>
 						</li>
 						<li>
-							<a href="class-Native5.Services.Messaging.Notifier.html" title="Summary of Native5\Services\Messaging\Notifier"><span>Class</span></a>
+							<a href="class-Native5.Services.Messaging.MessageOptions.html" title="Summary of Native5\Services\Messaging\MessageOptions"><span>Class</span></a>
 						</li>
 
 						<li class="divider-vertical"></li>
@@ -68,28 +63,16 @@
 						<ul>
 				<li><a href="namespace-Native5.Services.Identity.html">Identity</a>
 						</li>
-<<<<<<< HEAD
-				<li><a href="namespace-Native5.Services.Job.html">Job</a>
-						</li>
-				<li class="active"><a href="namespace-Native5.Services.Messaging.html">Messaging</a>
-						</li>
-=======
 				<li class="active"><a href="namespace-Native5.Services.Messaging.html">Messaging</a>
 						</li>
 				<li><a href="namespace-Native5.Services.Rules.html">Rules</a>
 						</li>
->>>>>>> release-0.2.0
 				<li><a href="namespace-Native5.Services.Users.html">Users</a>
 						</li>
 							</ul></li>
 				<li><a href="namespace-Native5.Users.html">Users</a>
 						</li>
 							</ul></li>
-<<<<<<< HEAD
-				<li><a href="namespace-PHP.html">PHP</a>
-						</li>
-=======
->>>>>>> release-0.2.0
 			</ul>
 		</div>
 
@@ -98,10 +81,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-Native5.Services.Messaging.MailMessage.html">MailMessage</a></li>
-<<<<<<< HEAD
-=======
-				<li><a href="class-Native5.Services.Messaging.MessageOptions.html">MessageOptions</a></li>
->>>>>>> release-0.2.0
+				<li class="active"><a href="class-Native5.Services.Messaging.MessageOptions.html">MessageOptions</a></li>
 				<li><a href="class-Native5.Services.Messaging.NotificationService.html">NotificationService</a></li>
 				<li><a href="class-Native5.Services.Messaging.RemoteMailNotifier.html">RemoteMailNotifier</a></li>
 				<li><a href="class-Native5.Services.Messaging.RemoteSMSNotifier.html">RemoteSMSNotifier</a></li>
@@ -113,7 +93,7 @@
 			<h3>Interfaces</h3>
 			<ul>
 				<li><a href="class-Native5.Services.Messaging.Message.html">Message</a></li>
-				<li class="active"><a href="class-Native5.Services.Messaging.Notifier.html">Notifier</a></li>
+				<li><a href="class-Native5.Services.Messaging.Notifier.html">Notifier</a></li>
 			</ul>
 
 
@@ -145,7 +125,7 @@
 </span></span><span id="12" class="l"><a class="l" href="#12">12 </a><span class="php-comment"> *  limitations under the License.
 </span></span><span id="13" class="l"><a class="l" href="#13">13 </a><span class="php-comment"> *  PHP version 5.3+
 </span></span><span id="14" class="l"><a class="l" href="#14">14 </a><span class="php-comment"> *
-</span></span><span id="15" class="l"><a class="l" href="#15">15 </a><span class="php-comment"> * @category  &lt;category&gt; 
+</span></span><span id="15" class="l"><a class="l" href="#15">15 </a><span class="php-comment"> * @category  Notifications 
 </span></span><span id="16" class="l"><a class="l" href="#16">16 </a><span class="php-comment"> * @package   Native5\&lt;package&gt;
 </span></span><span id="17" class="l"><a class="l" href="#17">17 </a><span class="php-comment"> * @author    Barada Sahu &lt;barry@native5.com&gt;
 </span></span><span id="18" class="l"><a class="l" href="#18">18 </a><span class="php-comment"> * @copyright 2012 Native5. All Rights Reserved 
@@ -157,7 +137,7 @@
 </span><span id="24" class="l"><a class="l" href="#24">24 </a><span class="php-keyword1">namespace</span> Native5\Services\Messaging;
 </span><span id="25" class="l"><a class="l" href="#25">25 </a>
 </span><span id="26" class="l"><a class="l" href="#26">26 </a><span class="php-comment">/**
-</span></span><span id="27" class="l"><a class="l" href="#27">27 </a><span class="php-comment"> * Notifier 
+</span></span><span id="27" class="l"><a class="l" href="#27">27 </a><span class="php-comment"> * MailOptions
 </span></span><span id="28" class="l"><a class="l" href="#28">28 </a><span class="php-comment"> * 
 </span></span><span id="29" class="l"><a class="l" href="#29">29 </a><span class="php-comment"> * @category  Notifications 
 </span></span><span id="30" class="l"><a class="l" href="#30">30 </a><span class="php-comment"> * @package   Native5\Services\Messaging
@@ -169,24 +149,17 @@
 </span></span><span id="36" class="l"><a class="l" href="#36">36 </a><span class="php-comment"> * Created : 27-11-2012
 </span></span><span id="37" class="l"><a class="l" href="#37">37 </a><span class="php-comment"> * Last Modified : Fri Dec 21 09:11:53 2012
 </span></span><span id="38" class="l"><a class="l" href="#38">38 </a><span class="php-comment"> */</span>
-</span><span id="39" class="l"><a class="l" href="#39">39 </a>
-</span><span id="40" class="l"><a class="l" href="#40">40 </a><span class="php-keyword1">interface</span> <a id="Notifier" href="#Notifier">Notifier</a> {
-</span><span id="41" class="l"><a class="l" href="#41">41 </a>    <span class="php-keyword1">const</span> <a id="TYPE_EMAIL" href="#TYPE_EMAIL">TYPE_EMAIL</a> = <span class="php-quote">&quot;mail&quot;</span>;
-</span><span id="42" class="l"><a class="l" href="#42">42 </a>    <span class="php-keyword1">const</span> <a id="TYPE_SMS" href="#TYPE_SMS">TYPE_SMS</a>   = <span class="php-quote">&quot;sms&quot;</span>;
-</span><span id="43" class="l"><a class="l" href="#43">43 </a>    <span class="php-keyword1">const</span> <a id="TYPE_VOICE" href="#TYPE_VOICE">TYPE_VOICE</a> = <span class="php-quote">&quot;voice&quot;</span>;
-</span><span id="44" class="l"><a class="l" href="#44">44 </a>    <span class="php-keyword1">const</span> <a id="TYPE_PUSH" href="#TYPE_PUSH">TYPE_PUSH</a>  = <span class="php-quote">&quot;push&quot;</span>;
-</span><span id="45" class="l"><a class="l" href="#45">45 </a>
-</span><span id="46" class="l"><a class="l" href="#46">46 </a>    <span class="php-comment">//public function setDefaultTemplate($template);</span>
-<<<<<<< HEAD
-</span><span id="47" class="l"><a class="l" href="#47">47 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_notify" href="#_notify">notify</a>(Message <span class="php-var">$message</span>);
-=======
-</span><span id="47" class="l"><a class="l" href="#47">47 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_notify" href="#_notify">notify</a>(Message <span class="php-var">$message</span>, <span class="php-var">$options</span>=<span class="php-keyword1">array</span>());
->>>>>>> release-0.2.0
-</span><span id="48" class="l"><a class="l" href="#48">48 </a>    <span class="php-comment">//public function getStatus(Message $message);</span>
-</span><span id="49" class="l"><a class="l" href="#49">49 </a>}
-</span><span id="50" class="l"><a class="l" href="#50">50 </a>
-</span><span id="51" class="l"><a class="l" href="#51">51 </a>
-</span><span id="52" class="l"><a class="l" href="#52">52 </a></span></code></pre>
+</span><span id="39" class="l"><a class="l" href="#39">39 </a><span class="php-keyword1">class</span> <a id="MessageOptions" href="#MessageOptions">MessageOptions</a>
+</span><span id="40" class="l"><a class="l" href="#40">40 </a>{
+</span><span id="41" class="l"><a class="l" href="#41">41 </a>    <span class="php-keyword1">const</span> <a id="OPT_PRIORITY_HIGH" href="#OPT_PRIORITY_HIGH">OPT_PRIORITY_HIGH</a> = <span class="php-quote">'HIGH'</span>;
+</span><span id="42" class="l"><a class="l" href="#42">42 </a>    <span class="php-keyword1">const</span> <a id="OPT_PRIORITY_NORMAL" href="#OPT_PRIORITY_NORMAL">OPT_PRIORITY_NORMAL</a> = <span class="php-quote">'NORMAL'</span>;
+</span><span id="43" class="l"><a class="l" href="#43">43 </a>    <span class="php-keyword1">const</span> <a id="OPT_PRIORITY_LOW" href="#OPT_PRIORITY_LOW">OPT_PRIORITY_LOW</a> = <span class="php-quote">'LOW'</span>;
+</span><span id="44" class="l"><a class="l" href="#44">44 </a>
+</span><span id="45" class="l"><a class="l" href="#45">45 </a>    <span class="php-keyword1">const</span> <a id="OPT_MAIL_FORMAT_TEXT" href="#OPT_MAIL_FORMAT_TEXT">OPT_MAIL_FORMAT_TEXT</a> = <span class="php-quote">'TEXT'</span>;
+</span><span id="46" class="l"><a class="l" href="#46">46 </a>    <span class="php-keyword1">const</span> <a id="OPT_MAIL_FORMAT_HTML" href="#OPT_MAIL_FORMAT_HTML">OPT_MAIL_FORMAT_HTML</a> = <span class="php-quote">'HTML'</span>;
+</span><span id="47" class="l"><a class="l" href="#47">47 </a>}
+</span><span id="48" class="l"><a class="l" href="#48">48 </a>
+</span><span id="49" class="l"><a class="l" href="#49">49 </a></span></code></pre>
 	</div>
 </div>
 </body>

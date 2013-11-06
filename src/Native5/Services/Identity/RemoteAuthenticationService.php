@@ -60,8 +60,8 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
         $logger  = $GLOBALS['logger'];
         $path    = 'users/authenticate';
         $request = $this->_remoteServer->get($path);
-        $request->getQuery()->set('username', $token->getUser());
-        $request->getQuery()->set('password', $token->getPassword());
+        $request->getQuery()->set('username', $token->getUser()); 
+        $request->getQuery()->set('password', $token->getPassword()); 
         try {
             $response = $request->send();
             if ($response->getStatusCode() !== 200) {
@@ -69,12 +69,15 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
             }
 
             $rawResponse = $response->json();
-            $logger->debug(print_r($rawResponse, 1));
 
+            $roles    = isset($rawResponse['roles'])?explode(',',$rawResponse['roles']):array();
             $authInfo = new SimpleAuthInfo();
-            $authInfo->addPrincipal('Barada Sahu');
-            $authInfo->addPrincipal('Native5 Inc.');
-            return $authInfo;
+            $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
+            $authInfo->addPrincipal(array('email'=>$rawResponse['email']));
+            $authInfo->addPrincipal(array('account'=>$rawResponse['account']));
+            
+            $tokens = isset($rawResponse['token'])?$rawResponse['token']: array();
+            return array($authInfo, $roles, $tokens);
         } catch (\Exception $e) {
             throw new AuthenticationException();
         }

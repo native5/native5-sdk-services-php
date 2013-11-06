@@ -44,7 +44,7 @@ interface Notifier {
     const TYPE_PUSH  = "push";
 
     //public function setDefaultTemplate($template);
-    public function notify(Message $message);
+    public function notify(Message $message, $options=array());
     //public function getStatus(Message $message);
 }
 

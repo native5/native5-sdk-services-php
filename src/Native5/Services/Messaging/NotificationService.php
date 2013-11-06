@@ -87,13 +87,13 @@ class NotificationService
      * @access public
      * @return void
      */
-    public function sendNotification($channels, Message $message)
+    public function sendNotification($channels, Message $message, $options=array())
     {
         $status = array();
         foreach ($channels as $channel) {
             $notifier = $this->_getNotifier($channel);
             if (empty($notifier) === false) {
-                $status[$channel] = $notifier->notify($message);
+                $status[$channel] = $notifier->notify($message, $options);
             }
 
             return $status;

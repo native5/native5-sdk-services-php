@@ -1,4 +1,4 @@
 ---
-url : http://api.native5.com/v1
+url : http://api.dev.native5.com/v1
 sharedKey: Test
 secretKey: secret

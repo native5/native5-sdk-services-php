@@ -12,7 +12,7 @@
  *	limitations under the License.
  *  PHP version 5.3+
  *
- * @category  Users 
+ * @category  Notifications 
  * @package   Native5\<package>
  * @author    Barada Sahu <barry@native5.com>
  * @copyright 2012 Native5. All Rights Reserved 
@@ -21,13 +21,13 @@
  * @link      http://www.docs.native5.com 
  */
 
-namespace Native5\Services\Users;
+namespace Native5\Services\Messaging;
 
 /**
- * UserManager 
+ * MailOptions
  * 
- * @category  Users 
- * @package   Native5\<package>
+ * @category  Notifications 
+ * @package   Native5\Services\Messaging
  * @author    Barada Sahu <barry@native5.com>
  * @copyright 2012 Native5. All Rights Reserved 
  * @license   See attached NOTICE.md for details
@@ -36,16 +36,13 @@ namespace Native5\Services\Users;
  * Created : 27-11-2012
  * Last Modified : Fri Dec 21 09:11:53 2012
  */
-interface UserManager
+class MessageOptions
 {
-    public function deactivateUser($context);
-    public function activateUser($context);
-    public function getStatus($user);
-    public function authenticate($subject);
-    public function definePasswordPolicy($policy);
-    public function applyPasswordPolicy($policy, $groups);
-    public function verifyEmail($email);
-    public function verifyToken($email, $token);
-    public function changePassword($email, $token, $newPassword);
+    const OPT_PRIORITY_HIGH = 'HIGH';
+    const OPT_PRIORITY_NORMAL = 'NORMAL';
+    const OPT_PRIORITY_LOW = 'LOW';
+
+    const OPT_MAIL_FORMAT_TEXT = 'TEXT';
+    const OPT_MAIL_FORMAT_HTML = 'HTML';
 }
-?>
+

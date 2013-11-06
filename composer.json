@@ -31,6 +31,11 @@
             "url": "http://pear.php.net" 
         }
     ],
+    "require-dev" : {
+        "native5/native5-sdk-common-php": "dev-development",
+        "native5/native5-sdk-client-php": "dev-development"
+    
+    },
     "require" : {
             "native5/native5-sdk-common-php": "0.1.0",
             "native5/native5-sdk-client-php": "0.1.0",

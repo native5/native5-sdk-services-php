@@ -24,7 +24,7 @@
 namespace Native5\Users;
 
 /**
- * %ClassName% 
+ * UserState 
  * 
  * @category  <category> 
  * @package   Native5\<package>
