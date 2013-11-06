@@ -21,24 +21,9 @@
     "support"        : {
             "email"   : "support@native5.com"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://releases.native5.com/sdk-php/"
-        },    
-        { 
-            "type": "pear", 
-            "url": "http://pear.php.net" 
-        }
-    ],
-    "require-dev" : {
-        "native5/native5-sdk-common-php": "dev-development",
-        "native5/native5-sdk-client-php": "dev-development"
-    
-    },
     "require" : {
-            "native5/native5-sdk-common-php": "0.1.0",
-            "native5/native5-sdk-client-php": "0.1.0",
+            "native5/native5-sdk-common-php": "0.2.0",
+            "native5/native5-sdk-client-php": "0.2.0",
             "twig/twig": "1.*",
             "monolog/monolog": "1.2.*",
             "guzzle/guzzle": "*",
