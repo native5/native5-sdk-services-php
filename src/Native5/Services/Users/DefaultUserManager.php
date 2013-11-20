@@ -235,12 +235,14 @@ class DefaultUserManager extends ApiClient implements UserManager
 
     }//end verifyToken()
 
-    public function createUser($username, $password, $aliases = array()) {
+    public function createUser($username, $password, $name = null, $roles = array(), $aliases = array()) {
         global $logger;
         $path     = 'users/create';
         $request = $this->_remoteServer->post($path)
             ->setPostField('username', $username)
             ->setPostField('password', $password)
+            ->setPostField('name', $name)
+            ->setPostField('roles', json_encode($roles))
             ->setPostField('aliases', json_encode($aliases));
         try {
             $response = $request->send();
