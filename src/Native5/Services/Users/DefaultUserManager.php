@@ -234,5 +234,21 @@ class DefaultUserManager extends ApiClient implements UserManager
         return $response->getBody('true');
 
     }//end verifyToken()
+
+    public function createUser($username, $password, $aliases = array()) {
+        global $logger;
+        $path     = 'users/create';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('username', $username)
+            ->setPostField('password', $password)
+            ->setPostField('aliases', json_encode($aliases));
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+        return true; 
+    }
 }
-?>
+
