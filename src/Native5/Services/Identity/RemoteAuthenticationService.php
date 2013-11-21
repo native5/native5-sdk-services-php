@@ -72,10 +72,17 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
 
             $roles    = isset($rawResponse['roles'])?explode(',',$rawResponse['roles']):array();
             $authInfo = new SimpleAuthInfo();
-            $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
-            $authInfo->addPrincipal(array('email'=>$rawResponse['email']));
+            if(isset($rawResponse['name']))
+                $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
+            if(isset($rawResponse['email']))
+                $authInfo->addPrincipal(array('email'=>$rawResponse['email']));
             $authInfo->addPrincipal(array('account'=>$rawResponse['account']));
-            
+
+            if(!empty($rawResponse['aliases'])) {
+                foreach ($rawResponse['aliases'] as $k=>$v) {
+                    $authInfo->addPrincipal(array($k=>$v));
+                }
+            }
             $tokens = isset($rawResponse['token'])?$rawResponse['token']: array();
             return array($authInfo, $roles, $tokens);
         } catch (\Exception $e) {
