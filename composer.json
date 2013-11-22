@@ -21,16 +21,6 @@
     "support"        : {
             "email"   : "support@native5.com"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://test.native5.com/composer"
-        },    
-        { 
-            "type": "pear", 
-            "url": "http://pear.php.net" 
-        }
-    ],
     "require-dev" : {
         "native5/native5-sdk-common-php": "dev-development",
         "native5/native5-sdk-client-php": "dev-development"

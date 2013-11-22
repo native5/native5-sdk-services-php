@@ -114,10 +114,10 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
     public function onLogout($principal)
     {
         $path    = 'users/logout';
-        $request = $this->_remoteServer->get($path);
-        $request->getQuery()->set('token', $principal->serialize('json'));
+        $request = $this->_remoteServer->post($path);
+        // FIXME: Change this to correct call
+        $request->setPostField('session', $GLOBALS['app']->getSessionManager()->getActiveSession()->getAttribute('sessionHash'));
         $request->send();
-
     }//end onLogout()
 
 
