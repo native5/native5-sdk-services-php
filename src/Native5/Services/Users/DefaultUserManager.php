@@ -200,15 +200,15 @@ class DefaultUserManager extends ApiClient implements UserManager
      * @access public
      * @return boolean          true on success, false otherwise
      */
-    public function createUser($username, $password, $name = null, $roles = array(), $aliases = array()) {
+    public function createUser(\Native5\Services\Users\User $user) {
         global $logger;
         $path     = 'users/create';
         $request = $this->_remoteServer->post($path)
-            ->setPostField('username', $username)
-            ->setPostField('password', $password)
-            ->setPostField('name', $name)
-            ->setPostField('roles', json_encode($roles))
-            ->setPostField('aliases', json_encode($aliases));
+            ->setPostField('username', $user->getUsername())
+            ->setPostField('password', $user->getPassword())
+            ->setPostField('name', $user->getName())
+            ->setPostField('roles', json_encode($user->getRoles()))
+            ->setPostField('aliases', json_encode($user->getAliases()));
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
