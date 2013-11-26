@@ -40,52 +40,6 @@ use Native5\Services\Common\ApiClient;
  */
 class DefaultUserManager extends ApiClient implements UserManager
 {
-
-
-    /**
-     * deactivateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function deactivateUser($user)
-    {
-        $user->setState(UserState::INACTIVE);
-        // TODO : Update User 
-    } 
-
-
-    /**
-     * activateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function activateUser($user)
-    {
-        $user->setState(UserState::ACTIVE);
-        // TODO : Update user 
-    } 
-
-    /**
-     * getStatus 
-     * 
-     * @param mixed $user The user object
-     *
-     * @access public
-     * @return void
-     */
-    public function getStatus($user)
-    {
-        // TODO : Get user object 
-        return $user->getState();        
-    } 
-
-
     /**
      * Authenticates the subject.
      * 

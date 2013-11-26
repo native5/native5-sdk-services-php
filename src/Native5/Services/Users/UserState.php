@@ -36,10 +36,10 @@ namespace Native5\Users;
  * Created : 27-11-2012
  * Last Modified : Fri Dec 21 09:11:53 2012
  */
-interface UserState
+class UserState
 {
-    const ACTIVE    = 0;
-    const INACTIVE  = 1;
-    const LOCKED    = 2;
+    const CREATED   = 0;
+    const ACTIVE    = 1;
+    const DISABLED  = 2;
 }
-?>
+
