@@ -30,16 +30,25 @@
  */
 namespace Native5\Tests;
 
-use Native5\Configuration;
+use Native5\ConfigurationFactory;
 use Native5\Core\Log\LoggerFactory;
 use Native5\Core\Log\Logger;
 
 class Application {
     const N5_TESTS_NAME = 'Native5_Test';
-    const N5_DEFAULT_LOG_LEVEL = 7;
+    const N5_DEFAULT_LOG_LEVEL = 'LOG_INFO';
+    private static $LOG_MAPPING = array(
+        'debug'     => 'LOG_DEBUG',
+        'info'      => 'LOG_INFO',
+        'warning'   => 'LOG_WARNING',
+        'error'     => 'LOG_ERR',
+        'crit'      => 'LOG_CRIT',
+        'alert'     => 'LOG_ALERT',
+    );
 
     private static $_instance;
     private $_config;
+
 
     public static function init() {
         if (is_null(self::$_instance))
@@ -48,18 +57,25 @@ class Application {
 
     private function __construct() {
         $configFile = __DIR__.'/../../config/settings.yml';
+        $localConfigFile = __DIR__.'/../../config/settings.local.yml';
         if (!file_exists($configFile))
             throw new \Exception("No config file found in dummy Application");
 
-        $this->_config = new Configuration($configFile);
-
+        $configFactory  = new ConfigurationFactory($configFile, $localConfigFile);
+        $this->_config  = $configFactory->getConfig();
         $logFileName = __DIR__.'/../../../logs/'.self::N5_TESTS_NAME.'-debug.log';
         $GLOBALS['logger'] = LoggerFactory::instance()->getLogger();
-        $GLOBALS['logger']->addHandler($logFileName, Logger::ALL, 7);
+        $GLOBALS['logger']->addHandler($logFileName, Logger::ALL, self::$LOG_MAPPING[$this->_config->getLogLevel()]);
     }
 
     public function getConfiguration() {
         return $this->_config;
     }
+
+    public function getSessionManager()
+    {
+        return null;
+    }
+    
 }
 

@@ -189,6 +189,17 @@ class DefaultUserManager extends ApiClient implements UserManager
 
     }//end verifyToken()
 
+    /**
+     * createUser Create User for an application
+     * 
+     * @param mixed $username   Login username
+     * @param mixed $password   Login password
+     * @param mixed $name       User name
+     * @param array $roles      Optional user roles as an array
+     * @param array $aliases    Optional user aliases as an associative array
+     * @access public
+     * @return boolean          true on success, false otherwise
+     */
     public function createUser($username, $password, $name = null, $roles = array(), $aliases = array()) {
         global $logger;
         $path     = 'users/create';
@@ -207,6 +218,12 @@ class DefaultUserManager extends ApiClient implements UserManager
         return true; 
     }
 
+    /**
+     * getAllUsers      List all users for an application
+     * 
+     * @access public
+     * @return array    array of user associative arrays
+     */
     public function getAllUsers() {
         global $logger;
         $path    = 'users';

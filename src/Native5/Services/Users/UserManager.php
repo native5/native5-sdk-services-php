@@ -38,9 +38,9 @@ namespace Native5\Services\Users;
  */
 interface UserManager
 {
-    public function deactivateUser($context);
-    public function activateUser($context);
-    public function getStatus($user);
+    //public function deactivateUser($context);
+    //public function activateUser($context);
+    //public function getStatus($user);
     public function authenticate($subject);
     public function definePasswordPolicy($policy);
     public function applyPasswordPolicy($policy, $groups);
