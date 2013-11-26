@@ -252,5 +252,18 @@ class DefaultUserManager extends ApiClient implements UserManager
         }
         return true; 
     }
+
+    public function getAllUsers() {
+        global $logger;
+        $path    = 'users';
+        $request = $this->_remoteServer->get($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+        return $response; 
+    }
 }
 
