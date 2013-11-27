@@ -24,6 +24,7 @@
 namespace Native5\Services\Users;
 
 use Native5\Services\Common\ApiClient;
+use Native5\Services\Identity\RemoteAuthenticationService;
 
 /**
  * DefaultUserManager 
@@ -96,17 +97,8 @@ class DefaultUserManager extends ApiClient implements UserManager
      */
     public function authenticate($token)
     {
-        $path = 'users/authenticate';
-        $request =  $this->_remoteServer->get($path);
-        $request->getQuery()->set('subject', $subject->serialize('json'));
-        $response = $request->send();
-        $result = $response->json();
-        if ($result->authenticated === true) {
-            $app->getSessionManager()->startSession(null, true);
-            $subject = SecurityUtils::getSubject();
-            // - Update Subject, based on incoming data.
-            // - Set subject authentication status = true
-        }
+        $authService = new RemoteAuthenticationService();
+        return $authService->authenticate($token); 
     } 
 
 
