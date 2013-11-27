@@ -122,4 +122,3 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
 
 }//end class
 
-?>

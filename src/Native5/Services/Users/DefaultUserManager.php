@@ -41,52 +41,6 @@ use Native5\Services\Identity\RemoteAuthenticationService;
  */
 class DefaultUserManager extends ApiClient implements UserManager
 {
-
-
-    /**
-     * deactivateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function deactivateUser($user)
-    {
-        $user->setState(UserState::INACTIVE);
-        // TODO : Update User 
-    } 
-
-
-    /**
-     * activateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function activateUser($user)
-    {
-        $user->setState(UserState::ACTIVE);
-        // TODO : Update user 
-    } 
-
-    /**
-     * getStatus 
-     * 
-     * @param mixed $user The user object
-     *
-     * @access public
-     * @return void
-     */
-    public function getStatus($user)
-    {
-        // TODO : Get user object 
-        return $user->getState();        
-    } 
-
-
     /**
      * Authenticates the subject.
      * 
@@ -227,15 +181,26 @@ class DefaultUserManager extends ApiClient implements UserManager
 
     }//end verifyToken()
 
-    public function createUser($username, $password, $name = null, $roles = array(), $aliases = array()) {
+    /**
+     * createUser Create User for an application
+     * 
+     * @param mixed $username   Login username
+     * @param mixed $password   Login password
+     * @param mixed $name       User name
+     * @param array $roles      Optional user roles as an array
+     * @param array $aliases    Optional user aliases as an associative array
+     * @access public
+     * @return boolean          true on success, false otherwise
+     */
+    public function createUser(\Native5\Services\Users\User $user) {
         global $logger;
         $path     = 'users/create';
         $request = $this->_remoteServer->post($path)
-            ->setPostField('username', $username)
-            ->setPostField('password', $password)
-            ->setPostField('name', $name)
-            ->setPostField('roles', json_encode($roles))
-            ->setPostField('aliases', json_encode($aliases));
+            ->setPostField('username', $user->getUsername())
+            ->setPostField('password', $user->getPassword())
+            ->setPostField('name', $user->getName())
+            ->setPostField('roles', json_encode($user->getRoles()))
+            ->setPostField('aliases', json_encode($user->getAliases()));
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
@@ -243,6 +208,25 @@ class DefaultUserManager extends ApiClient implements UserManager
             return false;
         }
         return true; 
+    }
+
+    /**
+     * getAllUsers      List all users for an application
+     * 
+     * @access public
+     * @return array    array of user associative arrays
+     */
+    public function getAllUsers() {
+        global $logger;
+        $path    = 'users';
+        $request = $this->_remoteServer->get($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+        return $response; 
     }
 }
 
