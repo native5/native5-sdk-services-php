@@ -226,7 +226,52 @@ class DefaultUserManager extends ApiClient implements UserManager
             $logger->info($e->getResponse()->getBody('true'), array());
             return false;
         }
-        return $response; 
+        return $response->json();
+    }
+
+    public function deactivateUser($username) {
+
+        global $logger;
+        $path    = 'users/deactivate';
+        $request = $this->_remoteServer->get($path)
+            ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function activateUser($username) {
+        global $logger;
+        $path    = 'users/activate';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function deleteUser($username) {
+        global $logger;
+        $path    = "users/delete?username=$username";
+        $request = $this->_remoteServer->delete($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
     }
 }
 
