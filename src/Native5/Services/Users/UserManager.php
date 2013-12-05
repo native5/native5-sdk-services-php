@@ -38,8 +38,8 @@ namespace Native5\Services\Users;
  */
 interface UserManager
 {
-    //public function deactivateUser($context);
-    //public function activateUser($context);
+    public function deactivateUser($username);
+    public function activateUser($username);
     //public function getStatus($user);
     public function authenticate($subject);
     public function definePasswordPolicy($policy);
@@ -48,5 +48,6 @@ interface UserManager
     public function verifyToken($email, $token);
     public function changePassword($email, $token, $newPassword);
     public function createUser(\Native5\Services\Users\User $user);
+    public function deleteUser($username);
 }
 

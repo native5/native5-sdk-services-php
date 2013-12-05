@@ -22,6 +22,7 @@ class UserBuilder {
 
     public function setPassword($password) {
         $this->_password = $password;
+        return $this;
     }
 
     public function getName() {
@@ -30,6 +31,7 @@ class UserBuilder {
 
     public function setName($name) {
         $this->_name = $name;
+        return $this;
     }
 
     public function getAliases() {
@@ -38,6 +40,7 @@ class UserBuilder {
 
     public function setAliases($aliases) {
         $this->_aliases = $aliases;
+        return $this;
     }
 
     public function getRoles() {
@@ -46,6 +49,7 @@ class UserBuilder {
 
     public function setRoles($roles) {
         $this->_roles = $roles;
+        return $this;
     }
 
     public function build() {
