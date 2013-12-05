@@ -1,12 +1,10 @@
 language: php
 php:
-- '5.5'
 - '5.4'
+- '5.3'
 install:
 - composer install
 - printf "\n" | pecl install yaml
-before_script:
-- phpenv config-add tests/native5-env.ini
 branches:
   only:
   - development
