@@ -70,6 +70,7 @@ class RemoteSMSNotifier extends ApiClient implements Notifier
         $request->setPostField('from', $message->getFrom());
         $request->setPostField('to', implode(';', $message->getRecipients()));
         $request->setPostField('content', $message->getBody());
+        $request->setPostField('priority', 'normal');
 
         try {
             $response = $request->send();
