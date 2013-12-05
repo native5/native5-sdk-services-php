@@ -65,7 +65,7 @@ class Application {
         $this->_config  = $configFactory->getConfig();
         $logFileName = __DIR__.'/../../../logs/'.self::N5_TESTS_NAME.'-debug.log';
         $GLOBALS['logger'] = LoggerFactory::instance()->getLogger();
-        //$GLOBALS['logger']->addHandler($logFileName, Logger::ALL, self::$LOG_MAPPING[$this->_config->getLogLevel()]);
+        $GLOBALS['logger']->addHandler($logFileName, Logger::ALL, self::$LOG_MAPPING[$this->_config->getLogLevel()]);
     }
 
     public function getConfiguration() {
