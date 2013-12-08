@@ -85,6 +85,10 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
 
         $sms->setBody('Testing SMS Sending works.');
         $sms->setRecipients(array('+917411755625'));
+<<<<<<< HEAD
+=======
+        $sms->setFrom('+917411755625');
+>>>>>>> release-0.3.0
 
         $smsStatus = $this->object->sendNotification($channels, $sms);
         $this->assertNotNull($smsStatus['sms']);

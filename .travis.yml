@@ -1,0 +1,14 @@
+language: php
+php:
+- '5.4'
+- '5.3'
+install:
+- composer install
+- printf "\n" | pecl install yaml
+branches:
+  only:
+  - development
+env:
+  global:
+  - secure: Dh1FaBtkYkadnWG72I4dfyTm+LyZWVyVxSV0PD6V3wDaJXn5Yl+Xtgq5K6YMwBzYFxVkk1tmFWlwN3Ao5Ii6LgXWMH1fjAbNjutJcwEQp9Awa2Md41kxl6fZ8Vflia2QXvPrTS6ezwf5CdNj3RrJ3A7jI2sEsxNYacMNumD4cPs=
+  - secure: PTzf3vwzUwEZbEabhYBGtLIN96xXaPF2fQwm9U1GDt5Jf3k9ggm0cNvSJb2huiiLXhflGao9CRH12FulNGWLn59+SG+6njsi9pZodYPrj417qplLAH1zRvx31s0JnILltDIiOUQXtcNYyzYR8zwNEqF4SU06n6bgmh/bpv3F9qw=

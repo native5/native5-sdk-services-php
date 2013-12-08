@@ -24,6 +24,7 @@
 namespace Native5\Services\Users;
 
 use Native5\Services\Common\ApiClient;
+use Native5\Services\Identity\RemoteAuthenticationService;
 
 /**
  * DefaultUserManager 
@@ -40,52 +41,6 @@ use Native5\Services\Common\ApiClient;
  */
 class DefaultUserManager extends ApiClient implements UserManager
 {
-
-
-    /**
-     * deactivateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function deactivateUser($user)
-    {
-        $user->setState(UserState::INACTIVE);
-        // TODO : Update User 
-    } 
-
-
-    /**
-     * activateUser 
-     * 
-     * @param mixed $user The user
-     *
-     * @access public
-     * @return void
-     */
-    public function activateUser($user)
-    {
-        $user->setState(UserState::ACTIVE);
-        // TODO : Update user 
-    } 
-
-    /**
-     * getStatus 
-     * 
-     * @param mixed $user The user object
-     *
-     * @access public
-     * @return void
-     */
-    public function getStatus($user)
-    {
-        // TODO : Get user object 
-        return $user->getState();        
-    } 
-
-
     /**
      * Authenticates the subject.
      * 
@@ -96,17 +51,8 @@ class DefaultUserManager extends ApiClient implements UserManager
      */
     public function authenticate($token)
     {
-        $path = 'users/authenticate';
-        $request =  $this->_remoteServer->get($path);
-        $request->getQuery()->set('subject', $subject->serialize('json'));
-        $response = $request->send();
-        $result = $response->json();
-        if ($result->authenticated === true) {
-            $app->getSessionManager()->startSession(null, true);
-            $subject = SecurityUtils::getSubject();
-            // - Update Subject, based on incoming data.
-            // - Set subject authentication status = true
-        }
+        $authService = new RemoteAuthenticationService();
+        return $authService->authenticate($token); 
     } 
 
 
@@ -234,5 +180,98 @@ class DefaultUserManager extends ApiClient implements UserManager
         return $response->getBody('true');
 
     }//end verifyToken()
+
+    /**
+     * createUser Create User for an application
+     * 
+     * @param mixed $username   Login username
+     * @param mixed $password   Login password
+     * @param mixed $name       User name
+     * @param array $roles      Optional user roles as an array
+     * @param array $aliases    Optional user aliases as an associative array
+     * @access public
+     * @return boolean          true on success, false otherwise
+     */
+    public function createUser(\Native5\Services\Users\User $user) {
+        global $logger;
+        $path     = 'users/create';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('username', $user->getUsername())
+            ->setPostField('password', $user->getPassword())
+            ->setPostField('name', $user->getName())
+            ->setPostField('roles', json_encode($user->getRoles()))
+            ->setPostField('aliases', json_encode($user->getAliases()));
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+        return true; 
+    }
+
+    /**
+     * getAllUsers      List all users for an application
+     * 
+     * @access public
+     * @return array    array of user associative arrays
+     */
+    public function getAllUsers() {
+        global $logger;
+        $path    = 'users';
+        $request = $this->_remoteServer->get($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+        return $response->json();
+    }
+
+    public function deactivateUser($username) {
+
+        global $logger;
+        $path    = 'users/deactivate';
+        $request = $this->_remoteServer->get($path)
+            ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function activateUser($username) {
+        global $logger;
+        $path    = 'users/activate';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function deleteUser($username) {
+        global $logger;
+        $path    = "users/delete?username=$username";
+        $request = $this->_remoteServer->delete($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
 }
-?>
+

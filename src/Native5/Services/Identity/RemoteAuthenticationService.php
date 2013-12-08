@@ -55,13 +55,19 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
      * @return <code>AuthInfo</code>
      * @throws AuthenticationException
      */
-    public function authenticate($token)
+    public function authenticate($token, $preventDuplicate=false)
     {
         $logger  = $GLOBALS['logger'];
         $path    = 'users/authenticate';
-        $request = $this->_remoteServer->get($path);
-        $request->getQuery()->set('username', $token->getUser()); 
-        $request->getQuery()->set('password', $token->getPassword()); 
+        $request = $this->_remoteServer->post($path);
+        $request->setPostField('username', $token->getUser());
+        $request->setPostField('password', $token->getPassword());
+        if($preventDuplicate) {
+            // Generate a hash of the session id.
+            $ua = $_SERVER['HTTP_USER_AGENT'];
+            $hashedSessionId = crypt(uniqid().$ua);
+            $request->setPostField('session', $hashedSessionId);
+        }
         try {
             $response = $request->send();
             if ($response->getStatusCode() !== 200) {
@@ -72,12 +78,24 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
 
             $roles    = isset($rawResponse['roles'])?explode(',',$rawResponse['roles']):array();
             $authInfo = new SimpleAuthInfo();
-            $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
-            $authInfo->addPrincipal(array('email'=>$rawResponse['email']));
+            if(isset($rawResponse['name']))
+                $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
+            if(isset($rawResponse['email']))
+                $authInfo->addPrincipal(array('email'=>$rawResponse['email']));
             $authInfo->addPrincipal(array('account'=>$rawResponse['account']));
-            
+
+            if(!empty($rawResponse['aliases'])) {
+                foreach ($rawResponse['aliases'] as $k=>$v) {
+                    $authInfo->addPrincipal(array($k=>$v));
+                }
+            }
             $tokens = isset($rawResponse['token'])?$rawResponse['token']: array();
-            return array($authInfo, $roles, $tokens);
+
+            if($preventDuplicate) {
+                return array($authInfo, $roles, $tokens, $hashedSessionId);
+            } else {
+                return array($authInfo, $roles, $tokens);
+            }
         } catch (\Exception $e) {
             throw new AuthenticationException();
         }
@@ -93,16 +111,14 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
      * @access public
      * @return void
      */
-    public function onLogout($principal)
+    public function onLogout($principal, $sessionHash=null)
     {
         $path    = 'users/logout';
-        $request = $this->_remoteServer->get($path);
-        $request->getQuery()->set('token', $principal->serialize('json'));
+        $request = $this->_remoteServer->post($path);
+        $request->setPostField('session', $sessionHash); 
         $request->send();
-
     }//end onLogout()
 
 
 }//end class
 
-?>
