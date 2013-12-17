@@ -76,7 +76,9 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
 
             $rawResponse = $response->json();
 
-            $roles    = isset($rawResponse['roles'])?explode(',',$rawResponse['roles']):array();
+            $GLOBALS['logger']->info("Got authentication response: ".PHP_EOL.print_r($rawResponse, 1));
+
+            $roles    = isset($rawResponse['roles'])?$rawResponse['roles']:array();
             $authInfo = new SimpleAuthInfo();
             if(isset($rawResponse['name']))
                 $authInfo->addPrincipal(array('displayName'=>$rawResponse['name']));
