@@ -273,5 +273,21 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         return $response->getBody('true');
     }
+
+
+    public function generateUserOTP($username) {
+        global $logger;
+        $path    = 'users/generate_otp';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
 }
 
