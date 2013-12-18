@@ -106,6 +106,31 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
 
 
     /**
+     * onAccess
+     * 
+     * @param mixed $principal Principals to logout.
+     *
+     * @access public
+     * @return void
+     */
+    public function onAccess($sessionHash)
+    {
+        global $logger;
+        $path    = 'users/access';
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('session', $sessionHash);
+        try {
+            $response = $request->send();
+        } catch(\guzzle\http\exception\badresponseexception $e) {
+            $logger->info($e->getresponse()->getbody('true'), array());
+            return false;
+        }
+
+        return $response->getbody('true');
+    }//end onAccess()
+
+
+    /**
      * logout 
      * 
      * @param mixed $principal Principals to logout.
@@ -120,7 +145,6 @@ class RemoteAuthenticationService extends ApiClient implements Authenticator, Lo
         $request->setPostField('session', $sessionHash); 
         $request->send();
     }//end onLogout()
-
 
 }//end class
 
