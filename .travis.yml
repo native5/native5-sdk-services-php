@@ -7,7 +7,8 @@ install:
 - printf "\n" | pecl install yaml
 branches:
   only:
-  - development
+    - master
+    #- development
 env:
   global:
   - secure: Dh1FaBtkYkadnWG72I4dfyTm+LyZWVyVxSV0PD6V3wDaJXn5Yl+Xtgq5K6YMwBzYFxVkk1tmFWlwN3Ao5Ii6LgXWMH1fjAbNjutJcwEQp9Awa2Md41kxl6fZ8Vflia2QXvPrTS6ezwf5CdNj3RrJ3A7jI2sEsxNYacMNumD4cPs=
