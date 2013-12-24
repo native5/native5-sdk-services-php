@@ -24,13 +24,13 @@
     "require-dev" : {
         "native5/native5-sdk-common-php": "dev-development",
         "native5/native5-sdk-client-php": "dev-development"
+        "phpunit/phpunit": "3.7.*"
     
     },
     "require" : {
             "twig/twig": "1.*",
             "monolog/monolog": "1.2.*",
-            "guzzle/guzzle": "*",
-            "phpunit/phpunit": "3.7.*"
+            "guzzle/guzzle": "*"
     },
     "autoload": {
             "psr-0": {
