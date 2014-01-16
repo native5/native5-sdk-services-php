@@ -1,7 +1,7 @@
 {   
     "name"            : "native5/native5-sdk-services-php",
     "description"     : "PHP Services SDK for invoking Native5 Hosted Services.",
-    "type"          : "library",
+    "type"            : "library",
     "keywords"        : ["identity", "jobs", "messaging"],
     "homepage"        : "http://docs.native5.com",
     "license"         : "proprietary",
@@ -25,7 +25,6 @@
     "require-dev" : {
         "native5/native5-sdk-common-php": "dev-development",
         "native5/native5-sdk-client-php": "dev-development"
-    
     },
     "require" : {
             "twig/twig": "1.*",

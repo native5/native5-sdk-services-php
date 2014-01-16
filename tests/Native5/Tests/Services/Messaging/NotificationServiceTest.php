@@ -71,7 +71,7 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
 
         $email->setSubject('Test E-mail : Subject 001');
         $email->setBody('Testing E-mail Sending works.');
-        $email->setRecipients(array('barry@native5.com'));
+        $email->setRecipients(array('info@native5.com', 'test@native5.com'));
 
         $mailStatus = $this->object->sendNotification($channels, $email);
         $this->assertNotNull($mailStatus['mail']);
@@ -85,10 +85,7 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
 
         $sms->setBody('Testing SMS Sending works.');
         $sms->setRecipients(array('+917411755625'));
-<<<<<<< HEAD
-=======
         $sms->setFrom('+917411755625');
->>>>>>> release-0.3.0
 
         $smsStatus = $this->object->sendNotification($channels, $sms);
         $this->assertNotNull($smsStatus['sms']);
