@@ -207,6 +207,7 @@ class DefaultUserManager extends ApiClient implements UserManager
             $logger->info($e->getResponse()->getBody('true'), array());
             return false;
         }
+
         return true; 
     }
 
@@ -226,6 +227,7 @@ class DefaultUserManager extends ApiClient implements UserManager
             $logger->info($e->getResponse()->getBody('true'), array());
             return false;
         }
+
         return $response->json();
     }
 
@@ -273,7 +275,6 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         return $response->getBody('true');
     }
-
 
     public function generateUserOTP($username) {
         global $logger;

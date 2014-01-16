@@ -71,7 +71,7 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
 
         $email->setSubject('Test E-mail : Subject 001');
         $email->setBody('Testing E-mail Sending works.');
-        $email->setRecipients(array('barry@native5.com', 'shamik@native5.com'));
+        $email->setRecipients(array('info@native5.com', 'test@native5.com'));
 
         $mailStatus = $this->object->sendNotification($channels, $email);
         $this->assertNotNull($mailStatus['mail']);

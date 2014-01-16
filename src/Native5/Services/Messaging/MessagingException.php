@@ -51,5 +51,5 @@ class MessagingException extends \Exception
         parent::__construct('Issues while sending notification, please contact administrator.');
     }
 }
-?>
+
 
