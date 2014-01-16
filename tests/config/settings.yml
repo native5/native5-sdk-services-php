@@ -4,7 +4,8 @@ app :
     logLevel    : info
     defaultGrade: D001
 api:
-    url         : https://api.native5.com/v1
-    sharedKey   : Test 
-    secretKey   : Secret 
+    #url         : http://api.native5.com/v1
+    url         : http://10.0.0.8:8080/v1
+    sharedKey   : vduc2c4nlfj1
+    secretKey   : vqflefko0rmcuers8jo4j7c8ad
 environment : local
