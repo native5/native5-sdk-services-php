@@ -99,5 +99,9 @@ class MailMessage implements Message
     public function getAttachments() {
         return $this->_attachments;
     }
+
+    public function addAttachment($attachment) {
+        $this->_attachments[] = $attachment;
+    }
 }
 

@@ -51,6 +51,8 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
      */
     protected function setUp()
     {
+        \Native5\Application::init(__DIR__.'/../../../../config/settings.yml');
+
         $this->object = NotificationService::instance();
         $this->_logger = $GLOBALS['logger'];
     }
@@ -69,25 +71,32 @@ class NotificationServiceTest extends \PHPUnit_Framework_TestCase {
         $channels[] = Notifier::TYPE_EMAIL;
         $email = new MailMessage;
 
+        //xdebug_start_trace();
         $email->setSubject('Test E-mail : Subject 001');
         $email->setBody('Testing E-mail Sending works.');
-        $email->setRecipients(array('info@native5.com', 'test@native5.com'));
+        $email->setRecipients(array('shamik@native5.com', 'ravi.kishore@native5.com'));
+        $email->addAttachment(__FILE__);
+        $email->addAttachment(__DIR__.'/../../Application.php');
+        $email->addAttachment('/home/shamik/Work/Native5_Packages/SDKs/native5-sdk-services-php/LICENSE');
+        //$email->addAttachment('/home/shamik/Work/Native5_Packages/SDKs/native5-sdk-services-php/VERSION');
 
         $mailStatus = $this->object->sendNotification($channels, $email);
+        $GLOBALS['logger']->info("Got mailStatus: ".print_r($mailStatus, 1));
+        //xdebug_stop_trace();
         $this->assertNotNull($mailStatus['mail']);
     }
 
 
-    public function testSMS() {
-        $channels = array();
-        $channels[] = Notifier::TYPE_SMS;
-        $sms = new SMSMessage;
+    //public function testSMS() {
+        //$channels = array();
+        //$channels[] = Notifier::TYPE_SMS;
+        //$sms = new SMSMessage;
 
-        $sms->setBody('Testing SMS Sending works.');
-        $sms->setRecipients(array('+917411755625'));
-        $sms->setFrom('+917411755625');
+        //$sms->setBody('Testing SMS Sending works.');
+        //$sms->setRecipients(array('+917411755625'));
+        //$sms->setFrom('+917411755625');
 
-        $smsStatus = $this->object->sendNotification($channels, $sms);
-        $this->assertNotNull($smsStatus['sms']);
-    }
+        //$smsStatus = $this->object->sendNotification($channels, $sms);
+        //$this->assertNotNull($smsStatus['sms']);
+    //}
 }

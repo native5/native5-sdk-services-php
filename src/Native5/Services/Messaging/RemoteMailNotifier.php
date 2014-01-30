@@ -30,20 +30,9 @@ use Native5\Services\Messaging\Message;
 
 /**
  * RemoteMailNotifier 
- * 
- * @category  Messaging 
- * @package   Native5\Services\Messaging
- * @author    Barada Sahu <barry@native5.com>
- * @copyright 2012 Native5. All Rights Reserved 
- * @license   See attached NOTICE.md for details
- * @version   Release: 1.0 
- * @link      http://www.docs.native5.com 
- * Created : 27-11-2012
- * Last Modified : Fri Dec 21 09:11:53 2012
  */
-class RemoteMailNotifier extends ApiClient implements Notifier
-{
-
+class RemoteMailNotifier extends ApiClient implements Notifier {
+    const MAX_ATTACHMENTS = 3;
 
     /**
      * notify 
@@ -65,18 +54,39 @@ class RemoteMailNotifier extends ApiClient implements Notifier
             )
         );
         $path    = 'notifications/mail/send';
-        $request = $this->_remoteServer->post($path);
-        $request->setPostField('type', 'sms');
-        $request->setPostField('subject', $message->getSubject());
-        $request->setPostField('to', implode(';', $message->getRecipients()));
-        $request->setPostField('content', $message->getBody());
-        if (array_key_exists('priority', $options)) {
-            $request->setPostField('priority', $options['priority']);
-        }
-        if (array_key_exists('format', $options)) {
-            $request->setPostField('format', $options['format']);
-        }
 
+        // Check for number of attachments at the top
+        $attachments = $message->getAttachments();
+        if (count($attachments) > self::MAX_ATTACHMENTS)
+            throw new \InvalidArgumentException("Can only send maximum ".self::MAX_ATTACHMENTS." attachments in a single mail.");
+
+        // The base request
+        $request = $this->_remoteServer->post($path)
+            ->setPostField('type', 'sms')
+            ->setPostField('subject', $message->getSubject())
+            ->setPostField('to', implode(';', $message->getRecipients()))
+            ->setPostField('content', $message->getBody());
+
+        // Add options if present
+        if (isset($options['priority']))
+            $request->setPostField('priority', $options['priority']);
+        if (isset($options['priority']))
+            $request->setPostField('format', $options['format']);
+
+        if (!empty($attachments) && is_array($attachments)) {
+            foreach($attachments as $idx=>$attachment) {
+                if (!empty($attachment) && file_exists($attachment))
+                    // TODO: Remove HACK - sending files as attach[0], attach[1], attach[2]
+                    $request->addPostFile('attach['.$idx.']', $attachment);
+            }
+        } else
+            // Force a multipart form data by attaching /dev/null
+            $request->addPostFile('nullfile', '@/dev/null');
+
+        //// Add the duplicate aggregator for attachments
+        //$request->getQuery()->setAggregator(new \Guzzle\Http\QueryAggregator\DuplicateAggregator);
+
+        // Send the remote request
         try {
             $response = $request->send();
             if ($response->getStatusCode() !== 200) {
@@ -93,6 +103,5 @@ class RemoteMailNotifier extends ApiClient implements Notifier
     }//end notify()
 
 
-}//end class
+} //end class
 
-?>
