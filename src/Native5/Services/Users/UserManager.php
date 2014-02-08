@@ -49,5 +49,7 @@ interface UserManager
     public function changePassword($email, $token, $newPassword);
     public function createUser(\Native5\Services\Users\User $user);
     public function deleteUser($username);
+    public function getAllUsers($searchToken = null, $count = -1, $offset = 0);
+    
 }
 
