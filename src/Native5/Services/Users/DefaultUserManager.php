@@ -217,7 +217,7 @@ class DefaultUserManager extends ApiClient implements UserManager
      * @access public
      * @return array    array of user associative arrays
      */
-    public function getAllUsers($searchToken=null, $count = -1, $offset = 0) {
+    public function getAllUsers($searchToken=null, $count = 1000, $offset = 0) {
         global $logger;
         $path    = 'users';
         $request = $this->_remoteServer->get($path);
