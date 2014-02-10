@@ -47,7 +47,8 @@ interface UserManager
     public function verifyEmail($email);
     public function verifyToken($email, $token);
     public function changePassword($email, $token, $newPassword);
-    public function createUser(\Native5\Services\Users\User $user);
+    public function createUser(\Native5\Services\Users\User $user, $updates);
+    public function saveUser(\Native5\Services\Users\User $user);
     public function deleteUser($username);
     public function getAllUsers($searchToken = null, $count = 1000, $offset = 0);
     

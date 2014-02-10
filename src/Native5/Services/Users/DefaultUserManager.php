@@ -80,6 +80,29 @@ class DefaultUserManager extends ApiClient implements UserManager
     }
 
 
+
+    /**
+     * Updates user details 
+     * 
+     * @param mixed $user 
+     * @access public
+     * @return void
+     */
+    public function saveUser($user, $updates)
+    {
+        $logger = $GLOBALS['logger'];
+        $path    = 'users/'.$user->getId();
+        $request = $this->_remoteServer->put($path, array(), json_encode($updates));
+        try {
+            $response = $request->send();
+            return $response->getBody('true');
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+    }
+    
+
     /**
      * definePasswordPolicy 
      * 
