@@ -88,7 +88,7 @@ class DefaultUserManager extends ApiClient implements UserManager
      * @access public
      * @return void
      */
-    public function saveUser($user, $updates)
+    public function saveUser(\Native5\Services\Users\User $user, $updates)
     {
         $logger = $GLOBALS['logger'];
         $path    = 'users/'.$user->getId();
