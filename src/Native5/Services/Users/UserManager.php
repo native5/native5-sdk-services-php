@@ -50,7 +50,7 @@ interface UserManager
     public function createUser(\Native5\Services\Users\User $user);
     public function saveUser(\Native5\Services\Users\User $user, $updates);
     public function deleteUser($username);
-    public function getAllUsers($searchToken = null, $count = 1000, $offset = 0);
+    public function getAllUsers($count = 1000, $offset = 0, $searchToken = null);
     
 }
 
