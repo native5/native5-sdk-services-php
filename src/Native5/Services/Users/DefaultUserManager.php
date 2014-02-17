@@ -235,7 +235,7 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         global $logger;
         $path    = 'users/deactivate';
-        $request = $this->_remoteServer->get($path)
+        $request = $this->_remoteServer->post($path)
             ->setPostField('username', $username);
         try {
             $response = $request->send();
