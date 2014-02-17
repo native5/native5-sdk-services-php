@@ -290,5 +290,20 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         return $response->getBody('true');
     }
+
+    public function updateUser($username, $updates) {
+        global $logger;
+        $path    = "users/update/$username";
+        $request = $this->_remoteServer->put($path)
+            ->setPostField('updates', json_encode($updates));
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
 }
 
