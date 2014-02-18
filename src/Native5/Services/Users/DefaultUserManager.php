@@ -305,5 +305,19 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         return $response->getBody('true');
     }
+
+    public function getUsersCount() {
+        global $logger;
+        $path    = "users/count";
+        $request = $this->_remoteServer->put($path);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
 }
 
