@@ -56,3 +56,6 @@ Upgrades for supporting Priority Based Notifications, & new service for rules ad
 
 ###Known Issues
     We are not aware of any :)
+
+Version 0.3.6
+---

@@ -262,7 +262,7 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         global $logger;
         $path    = 'users/deactivate';
-        $request = $this->_remoteServer->get($path)
+        $request = $this->_remoteServer->post($path)
             ->setPostField('username', $username);
         try {
             $response = $request->send();
@@ -308,6 +308,35 @@ class DefaultUserManager extends ApiClient implements UserManager
         $path    = 'users/generate_otp';
         $request = $this->_remoteServer->post($path)
             ->setPostField('username', $username);
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function updateUser($username, $updates) {
+        global $logger;
+        $path    = "users/update/$username";
+        $request = $this->_remoteServer->put($path)
+            ->setPostField('updates', json_encode($updates));
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
+
+    public function getUsersCount() {
+        global $logger;
+        $path    = "users/count";
+        $request = $this->_remoteServer->put($path);
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
