@@ -1,0 +1,1 @@
+Modify UserManager#getAllUsers to UserManager#getUsers / UserManager#searchUsers - Barada

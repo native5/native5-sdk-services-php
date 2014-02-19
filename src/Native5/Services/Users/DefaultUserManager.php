@@ -80,6 +80,29 @@ class DefaultUserManager extends ApiClient implements UserManager
     }
 
 
+
+    /**
+     * Updates user details 
+     * 
+     * @param mixed $user 
+     * @access public
+     * @return void
+     */
+    public function saveUser(\Native5\Services\Users\User $user, $updates)
+    {
+        $logger = $GLOBALS['logger'];
+        $path    = 'users/'.$user->getId();
+        $request = $this->_remoteServer->put($path, array(), json_encode($updates));
+        try {
+            $response = $request->send();
+            return $response->getBody('true');
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+    }
+    
+
     /**
      * definePasswordPolicy 
      * 
@@ -217,10 +240,14 @@ class DefaultUserManager extends ApiClient implements UserManager
      * @access public
      * @return array    array of user associative arrays
      */
-    public function getAllUsers() {
+    public function getAllUsers($count=1000, $offset=0, $searchToken=null) {
         global $logger;
         $path    = 'users';
         $request = $this->_remoteServer->get($path);
+        if($searchToken !== null) 
+            $request->getQuery()->set('searchToken', $searchToken);
+        $request->getQuery()->set('numUsers', $count);
+        $request->getQuery()->set('offset', $offset);
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
@@ -309,7 +336,7 @@ class DefaultUserManager extends ApiClient implements UserManager
     public function getUsersCount() {
         global $logger;
         $path    = "users/count";
-        $request = $this->_remoteServer->put($path);
+        $request = $this->_remoteServer->get($path);
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
