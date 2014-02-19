@@ -1,0 +1,10 @@
+---
+app :
+    name        : notifications-test
+    logLevel    : debug
+    defaultGrade: D001
+api:
+    url         : https://api.native5.com/v1
+    sharedKey   : Test 
+    secretKey   : Secret 
+#environment : local
