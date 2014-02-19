@@ -75,24 +75,24 @@ class IdentityServiceTest extends \PHPUnit_Framework_TestCase
      * @access public
      * @return void
      */
-    public function testAuthSuccess()
-    {
-        $resp = new \Guzzle\Http\Message\Response(
-            "200", 
-            array('Content-Type'=>'application/json'), 
-            '{"displayName":"barry", "email":"barry@native5.com", "account":"ACC_01010"}'
-        );
-        $mockClient = $this->getMock('Guzzle\Http\Client', array('send'));
-        $authService = new RemoteAuthenticationService();
-        $authService->setRemoteClient($this->_mockClient);
-        $this->_mockClient->expects($this->once())
-            ->method('send')
-            ->will($this->returnValue($resp));
-        $token = new UsernamePasswordToken('barry@native5.com', 'Awq21sdfjqe2');
-        $authInfo = $authService->authenticate($token);
-        $this->assertNotNull($authInfo);
-        //$this->assertInstanceOf('Native5\Identity\SimpleAuthInfo', $authInfo);
-    }
+    //public function testAuthSuccess()
+    //{
+        //$resp = new \Guzzle\Http\Message\Response(
+            //"200", 
+            //array('Content-Type'=>'application/json'), 
+            //'{"displayName":"barry", "email":"barry@native5.com", "account":"ACC_01010"}'
+        //);
+        //$mockClient = $this->getMock('Guzzle\Http\Client', array('send'));
+        //$authService = new RemoteAuthenticationService();
+        //$authService->setRemoteClient($this->_mockClient);
+        //$this->_mockClient->expects($this->once())
+            //->method('send')
+            //->will($this->returnValue($resp));
+        //$token = new UsernamePasswordToken('barry@native5.com', 'Awq21sdfjqe2');
+        //$authInfo = $authService->authenticate($token);
+        //$this->assertNotNull($authInfo);
+        ////$this->assertInstanceOf('Native5\Identity\SimpleAuthInfo', $authInfo);
+    //}
 
     /**
      * testAuthError
