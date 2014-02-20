@@ -346,5 +346,24 @@ class DefaultUserManager extends ApiClient implements UserManager
 
         return $response->getBody('true');
     }
+
+    public function updatePassword($username, $password, $oldPassword = null) {
+        global $logger;
+        $path    = "users/password/update";
+        $request = $this->_remoteServer->put($path)
+            ->setPostField('username', $username)
+            ->setPostField('password', $password);
+        if(!empty($oldPassword))
+            $request->getQuery()->set('oldPassword', $oldPassword);
+
+        try {
+            $response = $request->send();
+        } catch(\Guzzle\Http\Exception\BadResponseException $e) {
+            $logger->info($e->getResponse()->getBody('true'), array());
+            return false;
+        }
+
+        return $response->getBody('true');
+    }
 }
 
