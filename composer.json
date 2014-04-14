@@ -27,8 +27,6 @@
         "native5/native5-sdk-client-php": "dev-development"
     },
     "require" : {
-            "twig/twig": "1.*",
-            "monolog/monolog": "1.2.*",
             "guzzle/guzzle": "*",
             "phpunit/phpunit": "3.7.*"
     },
