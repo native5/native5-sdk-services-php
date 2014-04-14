@@ -244,8 +244,9 @@ class DefaultUserManager extends ApiClient implements UserManager
         global $logger;
         $path    = 'users';
         $request = $this->_remoteServer->get($path);
-        if($searchToken !== null) 
+        if(!empty($searchToken)) {
             $request->getQuery()->set('searchToken', $searchToken);
+        }
         $request->getQuery()->set('numUsers', $count);
         $request->getQuery()->set('offset', $offset);
         try {
@@ -333,10 +334,13 @@ class DefaultUserManager extends ApiClient implements UserManager
         return $response->getBody('true');
     }
 
-    public function getUsersCount() {
+    public function getUsersCount($searchToken=null) {
         global $logger;
         $path    = "users/count";
         $request = $this->_remoteServer->get($path);
+        if(!empty($searchToken)) {
+            $request->getQuery()->set('searchToken', $searchToken);
+        }
         try {
             $response = $request->send();
         } catch(\Guzzle\Http\Exception\BadResponseException $e) {
