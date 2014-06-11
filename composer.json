@@ -27,7 +27,7 @@
         "native5/native5-sdk-client-php": "dev-development"
     },
     "require" : {
-            "guzzle/guzzle": "*",
+            "guzzle/guzzle": "3.9.*",
             "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
